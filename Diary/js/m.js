@@ -3,7 +3,6 @@
 // }
 let dl = [], eDg = _e(".e-di-t-btn"), cc = 0, currEl;
 function ap(dt, t, cl, am){
-    console.log(typeof cl);
     cc++;
     if(t==="diary") {
         let iMg = "";
