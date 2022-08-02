@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary</title>
+    <link rel="stylesheet" href="./../assets/css/reset.css">
+    <link rel="stylesheet" href="./../assets/css/globals.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="dark">
+    <header class="has-bg has-color">
+        <div class="g-width">
+            <nav class="flex a-i-c">
+                <div class="logo">
+                    <h2 tabindex="1">DaQia</h2>
+                </div>
+                <div class="r-aside flex a-i-c">
+                    <div class="search">
+                        <div class="s-bar">
+                            <input type="text" class="has-bg-lighter ss-input" placeholder="Search">
+                            <span><img src="./images/search.png" alt=""></span>
+                        </div>
+                    </div>
+                    <div class="contrast flex">
+                        <span class="mode sun">
+                            <span class="cs-w-ii"></span>
+                        </span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+    <div class="g-width">
+        <section class="grid g-c-3-7">
+            <div class="lt-c c-c">
+                <div class="py-md">
+                    <div class="inc-s py-md">
+                        <div class="controls--mz">
+                            <button type="button" class="crls--mz a-ctiv-e a-n py-sm px-md flex a-i-c" id="aN" data-ref="nN">
+                                <span></span>
+                                <span>Diary</span>
+                            </button>
+                            <button type="button" class="crls--mz a-n py-sm px-md flex a-i-c" id="aR" data-ref="nR">
+                                <span></span>
+                                <span>Reminders</span>
+                            </button>
+                            <button type="button" class="crls--mz a-n py-sm px-md flex a-i-c" id="aT" data-ref="nT">
+                                <span></span>
+                                <span>Trash</span>
+                            </button>
+                            <button type="button" class="crls--mz a-n py-sm px-md flex a-i-c" id="aS" data-ref="nS">
+                                <span></span>
+                                <span>Settings</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="main--ss-moz displayer p-md">
+                    <div class="d-i">
+                        <div class="gc--gg">
+                            <div class="c--main a-ctiv-e d-e-y" id="d-a-M" data-has-anime="s-l--a">
+                                <div class="py-sm header px-md flex a-i-c j-c-b">
+                                    <div><h4>All My Diaries</h4></div>
+                                    <div>
+                                        <button class="aDd moz-c-r" _d-t-c-app--la data-ref="d-f-M" data-anime="s-r--a">Add New</button>
+                                    </div>
+                                </div>
+                                <div class="main p-md flex b-l-r--d" data-c _d-t-c-app--la data-ref="d-f-M" data-anime="s-r--a">
+                                    <div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c--main n-orma-l" id="d-f-M" data-has-anime="s-r--a">
+                                <div class="p-md inner">
+                                    <div class="default form f--m">
+                                        <form novalidate class="f--mz f-d--mz p-r" id="d-iar-y" data-act="new">
+                                            <div class="l--b shares">
+                                                <div>
+                                                    <label for="d-title"></label>
+                                                    <input type="text" class="i--t lg" title="Title" placeholder="Title" data-e="a title" id="d-title">
+                                                </div>
+                                                <div class="a-t-2">
+                                                    <label for="d-date">Date</label>
+                                                    <input type="date" class="i--t" title="Date" id="d-date">
+                                                </div>
+                                            </div>
+                                            <div class="l--b">
+                                                <label for="d-d"></label>
+                                                <textarea class="i--t" id="d-d" data-e="something about your day today" title="text" placeholder="Lay down your thoughts..."></textarea>
+                                            </div>
+                                            <div class="l--b f-s--mz flex a-i-c j-c-b">
+                                                <div class="l--b h-img-p-a-r">
+                                                    <input type="hidden" class="i--t" title="image" id="i-p-h" value="">
+                                                    <div class="flex a-i-c p-r">
+                                                        <div class="i-m-g-d-p i-n-n a-ctiv-e">
+                                                           <span></span>
+                                                        </div>
+                                                        <div class="i-m-g-d-p">
+                                                            <img src="./images/i-a.svg" class="i-m-g" data-rep="i-a" alt="">
+                                                        </div>
+                                                            <div class="i-m-g-d-p">
+                                                            <img src="./images/i-b.svg" class="i-m-g" date-rep="i-b" alt="">
+                                                        </div>
+                                                        <div class="i-m-g-d-p">
+                                                            <img src="./images/i-c.svg" class="i-m-g" data-rep="i-c" alt="">
+                                                        </div>
+                                                        <div class="i-m-g-d-p">
+                                                            <img src="./images/i-d.svg" class="i-m-g" data-rep="i-d" alt="">
+                                                        </div>
+                                                        <div class="i-m-g-d-p">
+                                                            <img src="./images/i-e.svg" class="i-m-g" data-rep="i-e" alt="">
+                                                        </div>
+                                                        <div class="i-m-g-d-p">
+                                                            <img src="./images/i-f.svg" class="i-m-g" data-rep="i-f" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex a-i-c j-c-b g-p-lg">
+                                                    <button type="button" class="moz-c-r b-c-t-p flex a-i-c" _d-t-c-app--la data-f-c="norm" data-ref="d-a-M" data-anime="s-l--a">
+                                                        <img src="https://img.icons8.com/windows/32/undefined/left.png" class="i-c-o-n"/>
+                                                        <span>Cancel</span>
+                                                    </button>
+                                                    <button type="submit">Save</button>
+                                                    <button type="button" class="e-di-t-btn">Edit</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    </main>
+    <div class="p-o-p m-or-e">
+        <button class="opt-m-o-r-e">Delete</button>
+    </div>
+    <script>
+    const _e= (dc)=> document.querySelector(dc); 
+    const _a= (dc)=> document.querySelectorAll(dc); 
+    </script>
+    <script src="./js/m.js"></script>
+    <script src="./js/t.js"></script>
+</body>
+</html>
