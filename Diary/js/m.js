@@ -5,13 +5,13 @@ let dl = [], eDg = _e(".e-di-t-btn"), cc = 0, currEl;
 function ap(dt, t, cl, am){
     cc++;
     if(t==="diary") {
-        let iMg = "";
-        dt.image.length > 0 ? iMg = 'background-image: url(./images/'+dt.image.split("/")[2]+')' : iMg = 'background-color:var(--bg3)'
+        let iMg = "", noImgClass = "has-i-m-g";
+        dt.image.length > 0 ? iMg = 'background-image: url(./images/'+dt.image.split("/")[2]+')' : (iMg = 'background-color:var(--bg3)', noImgClass = "no-i-m-g")
         let d = document.createElement("div");
         d.innerHTML = `
           <div class="i-c-bg p-sm p-r" data-cc="${cc}" style="${iMg}"><p>${dt.title}</p><div class="c-d-ls p-sm"><div class="flex j-c-b"><div><span class="i-c-o-n-2 e-d-i-t"><img src="./images/edit.svg" class="e-d-i-t"></span></div><div class="p-r"><button type="button" class="i-c-o-n-2 s-o-n ac-t-i-o-ns"><img class="ac-t-i-o-ns" src="./images/menu.svg"></button></div></div></div>
         `;
-        d.classList.add("d-r--d", "d-i-b");
+        d.classList.add("d-r--d", "d-i-b", noImgClass);
         typeof am !== undefined && am === true ? d.classList.add("a-n-i-m-e") : null
         if(cl != undefined && typeof cl == "object" && _a(".d-r--d").length > 2) {let m = cl.previousSibling; if(m) m.after(d); else _e("[data-c]").prepend(d)}
         else _e("[data-c]").prepend(d);
