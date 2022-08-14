@@ -460,12 +460,23 @@ h4 {
     z-index: 3;
 }
 .a-l-t {
+    display: block;
     position: fixed;
     background-color: var(--bg2);
     bottom: 20px;
     right: 20px;
     box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    transition: 0.3s ease;
+    transform: translateY(100px);
+}
+.a-l-t.a-ctiv-e {
+    display: block;
+    animation: mz 1.3s ease-out;
+    transform: translateY(0px);
+}
+.a-l-t:hover {
+    transform: translateY(-4px);
 }
 .d-i-c {
     background-color: #ff000049;
@@ -530,6 +541,21 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
         width: auto;
         max-width: 200px;
         height: auto;
+    }
+    
+}
+@keyframes mz {
+    0% {
+        transform: translateY(100px);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0px);
     }
     
 }

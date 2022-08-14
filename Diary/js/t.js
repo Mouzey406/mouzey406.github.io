@@ -1,4 +1,4 @@
-let dfAnime = "s-l--a";
+let dfAnime = "s-l--a", c_ps;
 let m_d = _e(".m-or-e"), m_d_s = 0;
 let aCtivE = (t, a="add", collection)=> {
     console.log(collection);
@@ -23,12 +23,12 @@ let crs = document.getElementsByClassName("moz-c-r");
     })
 })  
 
-let core = (t) =>{
+let core = (t, i) =>{
     m_d_s++;
     if(m_d.classList.contains("a-ctiv-e") && m_d_s === 2) {
-    if(t.matches("#d")) hd(i)
+    if(t.target.matches("#d")) hd(i)
         m_d.classList.remove("a-ctiv-e");
-    window.removeEventListener("click", core)
+    window.removeEventListener("click", c_ps)
     m_d_s = 0;
     }
 }
@@ -39,7 +39,10 @@ let more = (t, i)=> {
     m_d.classList.add("a-ctiv-e")
     m_d.style.top = (po.top + 20)+"px";
     m_d.style.left = po.left+"px";
-    window.addEventListener("click", core)
+    c_ps = e => {
+        core(e, i)
+    }
+    window.addEventListener("click", c_ps)
 }
 
 let hc = (e)=>{

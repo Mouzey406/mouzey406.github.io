@@ -1,7 +1,7 @@
 
 // const bh = ()=> {
 // }
-let dl = [], eDg = _e(".e-di-t-btn"), cc = 0, currEl;
+let dl = [], eDg = _e(".e-di-t-btn"), cc = 0, currEl, to_t;
 function ap(dt, t, cl, am){
     cc++;
     if(t==="diary") {
@@ -45,13 +45,25 @@ _e("#d-iar-y").addEventListener("submit", fo=>{
 })
 
 const hd = e => {
+    let g = _e(".a-l-t");
+    const c_to_t = ()=> clearTimeout(to_t);
+    const r_to_t = () =>(c_to_t(), to_t = setTimeout(()=>{g.classList.remove("a-ctiv-e"); g.removeEventListener("mouseover", c_to_t)},3500));
+    r_to_t();
     let t_e = dl.findIndex(a=>a._id === e);
-    dl[t_e].status === "deleted";
+    dl[t_e].status = "deleted";
+    g.classList.add("a-ctiv-e");
+    g.addEventListener("mouseover", c_to_t);
+    g.addEventListener("mouseleave", r_to_t);
+    reDom(currEl)
+    try {
+        localStorage.setItem(dl[t_e].type, JSON.stringify(dl));
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 const reDom = (el, clEl, dt) => { //div, closest sibling, object data 
     // if(clEl ===  undefined) clEl = el.previousSibling;
-    console.log(currEl);
     el.classList.add("i-nvi");
     setTimeout(()=>{el.remove()}, 100)
 }
