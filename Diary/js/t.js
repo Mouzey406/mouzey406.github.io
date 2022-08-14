@@ -1,4 +1,5 @@
 let dfAnime = "s-l--a";
+let m_d = _e(".m-or-e"), m_d_s = 0;
 let aCtivE = (t, a="add", collection)=> {
     console.log(collection);
     if(typeof collection !== undefined) collection.forEach(c=>_e(c).classList.remove("a-ctiv-e"));
@@ -22,11 +23,23 @@ let crs = document.getElementsByClassName("moz-c-r");
     })
 })  
 
-let more = (t)=> {
+let core = (t) =>{
+    m_d_s++;
+    if(m_d.classList.contains("a-ctiv-e") && m_d_s === 2) {
+    if(t.matches("#d")) hd(i)
+        m_d.classList.remove("a-ctiv-e");
+    window.removeEventListener("click", core)
+    m_d_s = 0;
+    }
+}
+
+let more = (t, i)=> {
+    m_d_s = 0;
     let po = t.getBoundingClientRect()
-    _e(".m-or-e").classList.add("a-ctiv-e")
-    _e(".m-or-e").style.top = po.top+"px";
-    _e(".m-or-e").style.left = po.left+"px";
+    m_d.classList.add("a-ctiv-e")
+    m_d.style.top = (po.top + 20)+"px";
+    m_d.style.left = po.left+"px";
+    window.addEventListener("click", core)
 }
 
 let hc = (e)=>{
@@ -60,7 +73,7 @@ const refresh = (t, u) => {
     _e(".b-c-t-p span").innerText = w
 }
 
-_e(".m-or-e").addEventListener("click", e=>{
-    if(e.target.matches("button")) {
-    }
-})
+// m_d.addEventListener("click", e=>{
+//     if(e.target.matches("button")) {
+//     }
+// })

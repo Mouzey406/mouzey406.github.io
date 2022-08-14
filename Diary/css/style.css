@@ -441,22 +441,42 @@ h4 {
 .p-o-p {
     display: none;
     position: absolute;
-    /* top: 35px; */
     background-color: var(--bg3);
-    /* right: 15px; */
+    color: var(--color);
     border-radius: 7px;
 }
-.d-p-d-w-n button {
+.m-or-e button {
+    display: block;
     color: var(--color2);
     transition: 0.12s;
+    padding: 8px 15px;
 }
-.d-p-d-w-n button:hover {
+.m-or-e button:hover {
     opacity: 0.8;
 }
-.p-o-p.a-ctiv-e {
+.m-or-e.a-ctiv-e {
     display: block !important;
     box-shadow: 0px 0px 4px -2px var(--color);
     z-index: 3;
+}
+.a-l-t {
+    position: fixed;
+    background-color: var(--bg2);
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+.d-i-c {
+    background-color: #ff000049;
+    width: 60px;
+}
+.re-s-tor-e {
+    color: #85ffd4;
+    gap: 0 4px;
+}
+.light .re-s-tor-e {
+    color: #119574;
 }
 .e-di-t-btn {
     display: none;

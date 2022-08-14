@@ -19,7 +19,7 @@ function ap(dt, t, cl, am){
             let el = e.target;
             currEl = el.closest(".d-r--d")
            if(el.classList.contains("e-d-i-t")) (et(dt._id, "diary", el, "edit"));
-           else if(el.classList.contains("ac-t-i-o-ns")) more(el)
+           else if(el.classList.contains("ac-t-i-o-ns")) more(el, dt._id)
            else et(dt._id, "diary", el, "view");
            _e("#d-iar-y").dataset.curr=dt._id;
         })
@@ -43,6 +43,11 @@ _e("#d-iar-y").addEventListener("submit", fo=>{
     if(fo.target.dataset.act === "edit" && fo.target.dataset.curr !== "") r = fo.target.dataset.curr //then update to local db
     nr(fObj, "diary", r);
 })
+
+const hd = e => {
+    let t_e = dl.findIndex(a=>a._id === e);
+    dl[t_e].status === "deleted";
+}
 
 const reDom = (el, clEl, dt) => { //div, closest sibling, object data 
     // if(clEl ===  undefined) clEl = el.previousSibling;
