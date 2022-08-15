@@ -1,7 +1,7 @@
 
 // const bh = ()=> {
 // }
-let dl = [], eDg = _e(".e-di-t-btn"), cc = 0, currEl, to_t;
+let dl = [], eDg = _e(".e-di-t-btn"), cc = 0, currEl, prevEl, to_t, currI;
 function ap(dt, t, cl, am){
     cc++;
     if(t==="diary") {
@@ -18,6 +18,7 @@ function ap(dt, t, cl, am){
         d.addEventListener("click", e=>{
             let el = e.target;
             currEl = el.closest(".d-r--d")
+            prevEl = currEl.nextSibling;
            if(el.classList.contains("e-d-i-t")) (et(dt._id, "diary", el, "edit"));
            else if(el.classList.contains("ac-t-i-o-ns")) more(el, dt._id)
            else et(dt._id, "diary", el, "view");
@@ -122,7 +123,6 @@ function hdp(to, a) {
     refresh("form#d-iar-y", a, "diary");
 }
 const et = (id, type, elt, act)=>{
-    let rdl = JSON.parse(localStorage.getItem("diary"));
     const to = dl.find(el=>el._id === id);
     if(elt!==undefined && to) hc(elt);
     hdp(to, act);

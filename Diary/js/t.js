@@ -26,7 +26,7 @@ let crs = document.getElementsByClassName("moz-c-r");
 let core = (t, i) =>{
     m_d_s++;
     if(m_d.classList.contains("a-ctiv-e") && m_d_s === 2) {
-    if(t.target.matches("#d")) hd(i)
+    if(t.target.matches("#d")) (hd(i), currI = i)
         m_d.classList.remove("a-ctiv-e");
     window.removeEventListener("click", c_ps)
     m_d_s = 0;
@@ -76,7 +76,18 @@ const refresh = (t, u) => {
     _e(".b-c-t-p span").innerText = w
 }
 
-// m_d.addEventListener("click", e=>{
-//     if(e.target.matches("button")) {
-//     }
-// })
+_e(".re-s-tor-e").addEventListener("click", e=>{
+    if(currI !== undefined && currI !== null)  {
+    let l = dl.findIndex(a=> a._id === currI)
+    if(l > -1) {
+    try {
+        dl[l].status = "active";
+        ap(dl[l], "diary", prevEl, true)
+        currI = null
+        localStorage.setItem(dl[l].type, JSON.stringify(dl))
+    }
+    catch(e) {
+        console.log(e);
+    }
+}}
+})
