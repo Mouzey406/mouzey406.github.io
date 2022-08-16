@@ -27,7 +27,7 @@ let core = (t, i) =>{
     m_d_s++;
     if(m_d.classList.contains("a-ctiv-e") && m_d_s >= 1) {
         console.log(t.target);
-    if(t.target.matches("#d") || t.target.matches("#d *")) (hd(i), currI = i)
+    if(t.target.matches("#d") || t.target.matches("#d *")) (hd(i), currI = i) //if delete icon or text is also clicked
         m_d.classList.remove("a-ctiv-e");
     window.removeEventListener("click", c_ps)
     m_d_s = 0;
