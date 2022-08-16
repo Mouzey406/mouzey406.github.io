@@ -9,7 +9,7 @@ function ap(dt, t, cl, am){
         dt.image.length > 0 ? iMg = 'background-image: url(./images/'+dt.image.split("/")[2]+')' : (iMg = 'background-color:var(--bg3)', noImgClass = "no-i-m-g")
         let d = document.createElement("div");
         d.innerHTML = `
-          <div class="i-c-bg p-sm p-r" data-cc="${cc}" style="${iMg}"><p>${dt.title}</p><div class="c-d-ls p-sm"><div class="flex j-c-b"><div><span class="i-c-o-n-2 e-d-i-t"><img src="./images/edit.svg" class="e-d-i-t"></span></div><div class="p-r"><button type="button" class="i-c-o-n-2 s-o-n ac-t-i-o-ns"><img class="ac-t-i-o-ns" src="./images/menu.svg"></button></div></div></div>
+          <div class="i-c-bg p-sm p-r" data-cc="${cc}" style="${iMg}"><p>${dt.title}</p><div class="c-d-ls p-sm"><div class="flex j-c-b"><div><span class="i-c-o-n-2 e-d-i-t"><img src="./images/edit.svg" class="e-d-i-t"></span></div><div class="p-r"><button type="button" class="i-c-o-n-2 s-o-n ac-t-i-o-ns"><img src="./images/menu.svg"></button></div></div></div>
         `;
         d.classList.add("d-r--d", "d-i-b", noImgClass);
         typeof am !== undefined && am === true ? d.classList.add("a-n-i-m-e") : null
@@ -19,8 +19,10 @@ function ap(dt, t, cl, am){
             let el = e.target;
             currEl = el.closest(".d-r--d")
             prevEl = currEl.nextSibling;
+            e.stopPropagation()
+            if(m_d.classList.contains("a-ctiv-e")) (m_d.classList.remove("a-ctiv-e"), m_d_s = 0);
            if(el.classList.contains("e-d-i-t")) (et(dt._id, "diary", el, "edit"));
-           else if(el.classList.contains("ac-t-i-o-ns")) more(el, dt._id)
+           else if(el.classList.contains("ac-t-i-o-ns") || el.matches(".ac-t-i-o-ns img")) more(el, dt._id)
            else et(dt._id, "diary", el, "view");
            _e("#d-iar-y").dataset.curr=dt._id;
         })
@@ -29,7 +31,7 @@ function ap(dt, t, cl, am){
 (function() {
 dl = JSON.parse(localStorage.getItem("diary"));
 if(dl===null || !dl) (dl = [], localStorage.setItem("diary", JSON.stringify([])));
-else dl.forEach(a=>ap(a,"diary"));
+else dl.forEach(a=> a.status === "active" ? ap(a, a.type) : null);
 })();
 _e("#d-iar-y").addEventListener("submit", fo=>{
     let r = false; //flag: update?

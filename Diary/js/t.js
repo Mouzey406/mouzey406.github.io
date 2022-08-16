@@ -25,7 +25,7 @@ let crs = document.getElementsByClassName("moz-c-r");
 
 let core = (t, i) =>{
     m_d_s++;
-    if(m_d.classList.contains("a-ctiv-e") && m_d_s === 2) {
+    if(m_d.classList.contains("a-ctiv-e") && m_d_s >= 1) {
     if(t.target.matches("#d")) (hd(i), currI = i)
         m_d.classList.remove("a-ctiv-e");
     window.removeEventListener("click", c_ps)

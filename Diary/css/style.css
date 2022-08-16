@@ -444,15 +444,15 @@ h4 {
     background-color: var(--bg3);
     color: var(--color);
     border-radius: 7px;
+    overflow: hidden;
 }
 .m-or-e button {
-    display: block;
     color: var(--color2);
     transition: 0.12s;
-    padding: 8px 15px;
+    padding: 14px 19px;
 }
 .m-or-e button:hover {
-    opacity: 0.8;
+    background-color: var(--bg2);
 }
 .m-or-e.a-ctiv-e {
     display: block !important;
