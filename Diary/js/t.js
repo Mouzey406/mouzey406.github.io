@@ -26,7 +26,8 @@ let crs = document.getElementsByClassName("moz-c-r");
 let core = (t, i) =>{
     m_d_s++;
     if(m_d.classList.contains("a-ctiv-e") && m_d_s >= 1) {
-    if(t.target.matches("#d")) (hd(i), currI = i)
+        console.log(t.target);
+    if(t.target.matches("#d") || t.target.matches("#d *")) (hd(i), currI = i)
         m_d.classList.remove("a-ctiv-e");
     window.removeEventListener("click", c_ps)
     m_d_s = 0;
@@ -40,6 +41,7 @@ let more = (t, i)=> {
     m_d.style.top = (po.top + 20)+"px";
     m_d.style.left = po.left+"px";
     c_ps = e => {
+        console.log(e);
         core(e, i)
     }
     window.addEventListener("click", c_ps)
