@@ -1,37 +1,43 @@
 
 // const bh = ()=> {
 // }
-let dl = [], eDg = _e(".e-di-t-btn"), cc = 0, currEl, prevEl, to_t, currI;
-function ap(dt, t, cl, am){
+let dl = [], eDg = _e(".e-di-t-btn"), cc = 0, currEl, prevEl, to_t, currI, currLocation;
+let tCont = _e("[data-t]")
+function ap(dt, t, cl, am, location){
     cc++;
     if(t==="diary") {
         let iMg = "", noImgClass = "has-i-m-g";
         dt.image.length > 0 ? iMg = 'background-image: url(./images/'+dt.image.split("/")[2]+')' : (iMg = 'background-color:var(--bg3)', noImgClass = "no-i-m-g")
         let d = document.createElement("div");
         d.innerHTML = `
-          <div class="i-c-bg p-sm p-r" data-cc="${cc}" style="${iMg}"><p>${dt.title}</p><div class="c-d-ls p-sm"><div class="flex j-c-b"><div><span class="i-c-o-n-2 e-d-i-t"><img src="./images/edit.svg" class="e-d-i-t"></span></div><div class="p-r"><button type="button" class="i-c-o-n-2 s-o-n ac-t-i-o-ns"><img src="./images/menu.svg"></button></div></div></div>
+          <div class="i-c-bg p-sm p-r" data-cc="${cc}" style="${iMg}"><p>${dt.title}</p><div class="c-d-ls p-sm"><div class="flex j-c-b"><div>${dt.status === "active" ? `<span class="i-c-o-n-2 e-d-i-t"><img src="./images/edit.svg" class="e-d-i-t"></span>` : ''}</div><div class="p-r"><button type="button" class="i-c-o-n-2 s-o-n ac-t-i-o-ns"><img src="./images/menu.svg"></button></div></div></div>
         `;
         d.classList.add("d-r--d", "d-i-b", noImgClass);
         typeof am !== undefined && am === true ? d.classList.add("a-n-i-m-e") : null
-        if(cl != undefined && typeof cl == "object" && _a(".d-r--d").length > 2) {let m = cl.previousSibling; if(m) m.after(d); else _e("[data-c]").prepend(d)}
-        else _e("[data-c]").prepend(d);
+        currEl = d;
         d.addEventListener("click", e=>{
+            currI = dt._id;
             let el = e.target;
             currEl = el.closest(".d-r--d")
             prevEl = currEl.nextSibling;
-            e.stopPropagation()
             if(m_d.classList.contains("a-ctiv-e")) (m_d.classList.remove("a-ctiv-e"), m_d_s = 0);
-           if(el.classList.contains("e-d-i-t")) (et(dt._id, "diary", el, "edit"));
-           else if(el.classList.contains("ac-t-i-o-ns") || el.matches(".ac-t-i-o-ns img")) more(el, dt._id)
-           else et(dt._id, "diary", el, "view");
-           _e("#d-iar-y").dataset.curr=dt._id;
+            if(el.classList.contains("e-d-i-t")) (et(dt._id, "diary", el, "edit"));
+            else if(el.classList.contains("ac-t-i-o-ns") || el.matches(".ac-t-i-o-ns img")) more(el)
+            else if(dt.status === "active") et(dt._id, "diary", el, "view");
+            _e("#d-iar-y").dataset.curr=dt._id;
+            e.stopPropagation()
+            currLocation = dt.status === "active" ? "view" : "trash";
         })
+        if(dt.status === "deleted") {tCont.prepend(d);  return}
+        else if(location !== "undefined" && location === "view") {_e("[data-c]").prepend(d); return}
+        if(cl != undefined && typeof cl == "object" && _a(".d-r--d").length > 2) {let m = cl.previousSibling; if(m) m.after(d); else _e("[data-c]").prepend(d)}
+        else _e("[data-c]").prepend(d);
     }
 }
 (function() {
 dl = JSON.parse(localStorage.getItem("diary"));
 if(dl===null || !dl) (dl = [], localStorage.setItem("diary", JSON.stringify([])));
-else dl.forEach(a=> a.status === "active" ? ap(a, a.type) : null);
+else dl.forEach(a=> ap(a, a.type));
 })();
 _e("#d-iar-y").addEventListener("submit", fo=>{
     let r = false; //flag: update?
@@ -54,10 +60,13 @@ const hd = e => {
     r_to_t();
     let t_e = dl.findIndex(a=>a._id === e);
     dl[t_e].status = "deleted";
-    g.classList.add("a-ctiv-e");
-    g.addEventListener("mouseover", c_to_t);
-    g.addEventListener("mouseleave", r_to_t);
     reDom(currEl)
+    ap(dl[t_e], "diary");
+    if(currLocation === "view") {
+        g.classList.add("a-ctiv-e");
+        g.addEventListener("mouseover", c_to_t);
+        g.addEventListener("mouseleave", r_to_t);
+    }
     try {
         localStorage.setItem(dl[t_e].type, JSON.stringify(dl));
     } catch (error) {
