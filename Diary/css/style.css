@@ -191,9 +191,11 @@ main {
     width: 100%;
     color: var(--color2);
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 500;
     transition: 0.3s;
     position: relative;
+    font-size: 15px;
+    font-family: 'Outfit', sans-serif;
 }
 .crls--mz svg {
     width: 20px;
