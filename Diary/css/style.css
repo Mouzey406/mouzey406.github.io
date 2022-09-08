@@ -378,9 +378,6 @@ main {
     margin-bottom: 2px;
     font-size: 13px;
 }
-.header {
-    border-bottom: 1px solid var(--bg2);
-}
 h4 {
     color: var(--color);
     font-size: 1.3rem;
@@ -797,6 +794,9 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
     .s-sm {
         display: none;
     }
+    .header {
+        border-bottom: 1px solid var(--bg2);
+    }
   }
   @media(max-width: 920px) {
     .s-lg {
@@ -836,6 +836,15 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
     }
     .p-md {
         padding: 14px;
+    }
+    .d-i {
+        background-color: transparent;
+    }
+    main {
+        background-color: var(--bg);
+    }
+    main > .g-width {
+        width: 100%;
     }
   }
   @media(min-height: 600px) {
