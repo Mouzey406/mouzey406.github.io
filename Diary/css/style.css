@@ -831,8 +831,21 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
         width: 55px;
         border-radius: 100%;
     }
+    .t-c-p {
+        flex-direction: column;
+    }
+    .i-m-g-d-p img {
+        width: 35px;
+        height: 35px;
+    }
   }
   @media(max-width: 568px) {
+    .i--t.lg {
+        font-size: 1.2rem;
+    }
+    .ff-sm-ct {
+        font-size: 0.85rem !important;
+    }
     .px-md {
         padding-left: 14px;
         padding-right: 14px;
