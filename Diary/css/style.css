@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;700&display=swap');
+html {
+    font-size: 16px;
+}
 body, button, span, textarea, input {
     font-family: 'Outfit', sans-serif;
 }
@@ -380,7 +383,7 @@ main {
 }
 h4 {
     color: var(--color);
-    font-size: 25px;
+    font-size: 1.3rem;
     font-weight: 400;
 }
 .aDd {
@@ -790,7 +793,15 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
   
 
   /* breaks  */
+  @media(min-width: 921px) {
+    .s-sm {
+        display: none;
+    }
+  }
   @media(max-width: 920px) {
+    .s-lg {
+        display: none;
+    }
     .g-c-3-7 {
         grid-template-columns: 1fr;
     }
@@ -802,5 +813,34 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
         top: 0;
         left: 0;
         transform: translateX(-100vw);
+    }
+    .r-aside .search {
+        margin-right: 7px;
+    }
+    .aDd {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 20px;
+        right: 15px;
+        height: 60px;
+        width: 60px;
+        border-radius: 100%;
+    }
+  }
+  @media(max-width: 568px) {
+    .px-md {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+    .p-md {
+        padding: 14px;
+    }
+  }
+  @media(min-height: 600px) {
+    body{
+        height: 100vh;
+        overflow: hidden;
     }
   }
