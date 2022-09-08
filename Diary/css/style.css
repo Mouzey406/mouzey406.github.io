@@ -825,10 +825,10 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
         align-items: center;
         justify-content: center;
         position: absolute;
-        bottom: 20px;
+        bottom: 30px;
         right: 15px;
-        height: 60px;
-        width: 60px;
+        height: 55px;
+        width: 55px;
         border-radius: 100%;
     }
   }
