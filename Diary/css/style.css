@@ -475,7 +475,7 @@ h4 {
     position: absolute;
     background-color: var(--bg3);
     color: var(--color);
-    border-radius: 7px;
+    border-radius: 3px;
     overflow: hidden;
 }
 .m-or-e button {
@@ -673,11 +673,11 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
     width: 100%;
     text-overflow: ellipsis;
     white-space: nowrap;
-    opacity: 0.6;
+    opacity: 0.55;
     transition: 0.4s;
   }
-  .sr_i--t h3:hover {
-    opacity: 0.95;
+  .sr_i--t a:hover h3 {
+    opacity: 1;
   }
   .sr_i--t p {
     font-weight: 400;
@@ -788,3 +788,19 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
     }
   }
   
+
+  /* breaks  */
+  @media(max-width: 920px) {
+    .g-c-3-7 {
+        grid-template-columns: 1fr;
+    }
+    .main--ss-moz.p-md {
+        padding-left: 0;
+    }
+    .lt-c {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(-100vw);
+    }
+  }
