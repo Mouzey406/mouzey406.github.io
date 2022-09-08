@@ -16,7 +16,7 @@ function ap(dt, t, cl, am, location){
         typeof am !== undefined && am === true ? d.classList.add("a-n-i-m-e") : null
         currEl = d;
         d.addEventListener("click", e=>{
-            currI = dt._id;
+            currI = dt._id; 
             let el = e.target;
             currEl = el.closest(".d-r--d")
             prevEl = currEl.nextSibling;
@@ -176,8 +176,11 @@ const sh = dt => {
         s_r.append(s);
         s.addEventListener("click", (e)=>{
             currI = dt[i]._id
-            et(dt[i]._id, "diary", e.target, "view")
+            et(dt[i]._id, "diary", e.target, "view");
+            currLocation = "view";
             _e(".moz-c-r.pp").click();
+            _e("#d-iar-y").dataset.curr=dt[i]._id;
+
         });
     }
 }
