@@ -799,6 +799,9 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
     }
   }
   @media(max-width: 920px) {
+    header {
+        border-bottom: 2px solid var(--bg3);
+    }
     .s-lg {
         display: none;
     }
