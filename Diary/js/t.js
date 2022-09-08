@@ -20,10 +20,15 @@ let crs = document.getElementsByClassName("moz-c-r");
 [...crs].forEach(c=>{
     c.addEventListener("click", e=>{
         let t = e.target;
-        if(c.classList.contains("a-ctiv-e")) return;
-        if(_e(".crls--mz.a-ctiv-e"))_e(".crls--mz.a-ctiv-e").classList.remove("a-ctiv-e");
+        console.log(t, _e(".crls--mz.a-ctiv-e"))
+        if(c.classList.contains("a-ctiv-e") && c.classList.contains("crls--mz")) return;
+        if(_e(".crls--mz.a-ctiv-e") && c.matches(".crls--mz"))_e(".crls--mz.a-ctiv-e").classList.remove("a-ctiv-e");
         c.classList.add("a-ctiv-e");
-        hc(t);
+        if(c.classList.contains("pp")) {
+            thr(_e("#dt-s"), [["a-ctiv-e"], ["out-ro"]]);
+            if(_e("#dt-s").classList.contains("a-ctiv-e"))  _e("#dt-s input").focus();
+        }
+        else hc(t);
     })
 })  
 
@@ -53,6 +58,7 @@ let hc = (e)=>{
     let t = e;
     if(t.classList.contains("moz-c-r")==false) t = e.closest("[_d-t-c-app--la]");
     const cP = _e(".c--main.a-ctiv-e");
+    console.log(t);
     thr(cP, [["n-orma-l", "d-e-y"], [cP.dataset.hasAnime, "a-ctiv-e"]]);
     thr(document.querySelector("#"+t.dataset.ref), [[t.dataset.anime, "a-ctiv-e"], ["n-orma-l", "d-e-y"]])
     if(t.hasAttribute("data-f-c")) refresh("form#d-iar-y", t.dataset.fC, "diary");

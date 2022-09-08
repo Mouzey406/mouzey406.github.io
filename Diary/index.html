@@ -20,8 +20,7 @@
                 <div class="r-aside flex a-i-c">
                     <div class="search">
                         <div class="s-bar">
-                            <input type="text" class="has-bg-lighter ss-input" placeholder="Search">
-                            <span><img src="./images/search.png" alt=""></span>
+                            <span class="pp moz-c-r"><img src="./images/search.png" alt=""></span>
                         </div>
                     </div>
                     <div class="contrast flex">
@@ -78,7 +77,7 @@
                                             <div class="l--b shares">
                                                 <div>
                                                     <label for="d-title"></label>
-                                                    <input type="text" class="i--t lg" title="Title" placeholder="Title" data-e="a title" id="d-title">
+                                                    <input type="text" spellcheck="false" class="i--t lg" title="Title" placeholder="Title" data-e="a title" id="d-title">
                                                 </div>
                                                 <div class="a-t-2">
                                                     <label for="d-date">Date</label>
@@ -87,7 +86,7 @@
                                             </div>
                                             <div class="l--b">
                                                 <label for="d-d"></label>
-                                                <textarea class="i--t" id="d-d" data-e="something about your day today" title="text" placeholder="Lay down your thoughts..."></textarea>
+                                                <textarea class="i--t" id="d-d" spellcheck="false" data-e="something about your day today" title="text" placeholder="Lay down your thoughts..."></textarea>
                                             </div>
                                             <div class="l--b f-s--mz flex a-i-c j-c-b">
                                                 <div class="l--b h-img-p-a-r">
@@ -188,6 +187,32 @@
             </div>
         </div>
     </div>
+
+    <div class="ss" id="dt-s">
+        <span class="d-x pp moz-c-r" data-target="">&times;</span>
+        <div class="d-s-ch flex a-i-c">
+            <div class="g-width py-sm">
+                <div class="ss-in-n flex j-c-c">
+                    <div class="flex j-c-c">
+                        <input type="text" class="i_s-s" id="d-sch" placeholder="Search for records" autocomplete="off">
+                        <label for="i_s-s"></label>
+                    </div>
+                </div>
+                <div class="ss-r-l-ts">
+                    <div class="l-d-r">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div id="s_r"  _d-t-c-app--la data-ref="d-f-M" data-anime="s-r--a" class="py-md sr_i--t">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
     const _e= (dc)=> document.querySelector(dc); 
     const _a= (dc)=> document.querySelectorAll(dc); 

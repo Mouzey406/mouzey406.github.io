@@ -1,7 +1,7 @@
 
 // const bh = ()=> {
 // }
-let dl = [], eDg = _e(".e-di-t-btn"), cc = 0, currEl, prevEl, to_t, currI, currLocation;
+let dl = [], eDg = _e(".e-di-t-btn"), cc = 0, currEl, prevEl, to_t, currI, currLocation, lDr = _e(".l-d-r");
 let tCont = _e("[data-t]")
 function ap(dt, t, cl, am, location){
     cc++;
@@ -147,4 +147,37 @@ const vi = (i) => { //validate inputs
     let j = i.dataset.e;
     i.setAttribute("placeholder", "Please enter "+j); i.focus(); i.classList.add("has-e");
     return false
+}
+
+
+let sO;
+_e("#d-sch").addEventListener("input", function(){
+    if(lDr.classList.contains("l-d-g") == false) lDr.classList.add("l-d-g");
+    clearTimeout(sO)
+   let dS = this.value;
+   let tOps = dl.filter(s => s.title.indexOf(dS) > -1);
+   sO = setTimeout(()=> {
+    if(lDr.classList.contains("l-d-g")) lDr.classList.remove("l-d-g")
+    sh(tOps);   
+   },1300);
+});
+
+let s_r = _e("#s_r");
+const sh = dt => {
+    s_r.innerHTML = "";
+    for(let i = 0; i < dt.length; i++) {
+        let s = document.createElement("a");
+        s.setAttribute("href", "javascript:void(0)");
+        s.innerHTML = `
+        <h3>${dt[i].title}</h3>
+        <p>${dt[i].text}</p>
+        <div class="flex j-c-b a-i-c"><span>${dt[i].date}</span><span></span></span>
+        `;
+        s_r.append(s);
+        s.addEventListener("click", (e)=>{
+            currI = dt[i]._id
+            et(dt[i]._id, "diary", e.target, "view")
+            _e(".moz-c-r.pp").click();
+        });
+    }
 }
