@@ -298,7 +298,6 @@ main {
 }
 .f-d--mz textarea {
     resize: none;
-    height: calc(var(--h) - 320px);
     margin-top: 25px;
     font-size: 18px;
     opacity: 0.9;
@@ -367,6 +366,7 @@ main {
     gap: 10px;
 }
 .a-t-2 {
+    min-width: 100px;
     position: absolute;
     right: 0;
     top: 0;
@@ -562,8 +562,7 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
     display: none;
     background-color: var(--bg);
     height: calc(var(--h) - 55px);
-    bottom: 0;
-    top: auto;
+    top: 55px;
     z-index: 1;
   }
   .ss.a-ctiv-e {
@@ -831,7 +830,7 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
     }
     .aDd {
         position: absolute;
-        bottom: 30px;
+        bottom: 15px;
         right: 15px;
         height: 55px;
         width: 55px;
