@@ -162,12 +162,12 @@ main {
     display: grid;
 }
 .g-c-3-7 {
-    min-height: calc(100vh - 55px);
+    min-height: calc(var(--h) - 55px);
     grid-template-columns: 25% 75%;
 }
 .g-c-2-8 {
     grid-template-columns: 20% 80%;
-    min-height: calc(100vh - 180px);
+    min-height: calc(var(--h) - 180px);
 }
 /* main--left */
 .lt-c > div {
@@ -298,7 +298,7 @@ main {
 }
 .f-d--mz textarea {
     resize: none;
-    height: calc(100vh - 320px);
+    height: calc(var(--h) - 320px);
     margin-top: 25px;
     font-size: 18px;
     opacity: 0.9;
@@ -561,7 +561,7 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
   .ss {
     display: none;
     background-color: var(--bg);
-    height: calc(100vh - 55px);
+    height: calc(var(--h) - 55px);
     bottom: 0;
     top: auto;
     z-index: 1;
@@ -927,7 +927,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
   @media(min-height: 600px) {
     body{
-        height: 100vh;
+        height: var(--h);
         overflow: hidden;
     }
   }

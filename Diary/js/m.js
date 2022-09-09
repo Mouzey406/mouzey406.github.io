@@ -35,7 +35,9 @@ function ap(dt, t, cl, am, location){
     }
 }
 (function() {
-dl = JSON.parse(localStorage.getItem("diary"));
+    const doc = document.documentElement
+    doc.style.setProperty('--h', `${window.innerHeight}px`);
+    dl = JSON.parse(localStorage.getItem("diary"));
 if(dl===null || !dl) (dl = [], localStorage.setItem("diary", JSON.stringify([])));
 else dl.forEach(a=> ap(a, a.type));
 })();
