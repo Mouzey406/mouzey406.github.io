@@ -567,6 +567,7 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
     z-index: 1;
   }
   .ss.a-ctiv-e {
+        border-top: 2px solid var(--bg2);
     display: block;
         -webkit-animation: fade-in 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
                 animation: fade-in 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -871,9 +872,6 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
     .d-x {
         top: -5px;
         right: 20px;
-    }
-    .ss.a-ctiv-e {
-        border-top: 2px solid var(--bg2);
     }
     .ss-in-n {
         margin-top: 3.2rem;
