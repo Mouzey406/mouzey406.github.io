@@ -26,7 +26,9 @@ let crs = document.getElementsByClassName("moz-c-r");
         c.classList.add("a-ctiv-e");
         if(c.classList.contains("pp")) {
             thr(_e("#dt-s"), [["a-ctiv-e"], ["out-ro"]]);
-            if(_e("#dt-s").classList.contains("a-ctiv-e"))  _e("#dt-s input").focus();
+            if(_e("#dt-s").classList.contains("a-ctiv-e")) setTimeout(() => {
+                _e("#dt-s input").focus() 
+            }, 320);;
         }
         else hc(t);
     })
