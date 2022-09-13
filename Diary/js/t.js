@@ -3,7 +3,7 @@ let m_d = _e(".m-or-e"), m_d_s = 0;
 let mode = _e(".mode");
 let aCtivE = (t, a="add", collection)=> {
     console.log(collection);
-    if(typeof collection !== undefined) collection.forEach(c=>_e(c).classList.remove("a-ctiv-e"));
+    if(typeof collection !== undefined) collection.forEach(c=>{if(_e(c) !== null) _e(c).classList.remove("a-ctiv-e")});
     a==="add"?t.classList.add("a-ctiv-e"):t.classList.remove("a-ctiv-e");
 }
 mode.addEventListener("click", e=>{

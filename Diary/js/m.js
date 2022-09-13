@@ -186,7 +186,7 @@ const sh = dt => {
             currI = dt[i]._id
             et(dt[i]._id, "diary", e.target, "view");
             currLocation = "view";
-            _e(".moz-c-r.pp").click();
+            _e(".d-x.pp.moz-c-r").click();
             _e("#d-iar-y").dataset.curr=dt[i]._id;
 
         });
