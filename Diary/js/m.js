@@ -35,10 +35,14 @@ function ap(dt, t, cl, am, location){
     }
 }
 (function() {
-    const doc = document.documentElement
-    doc.style.setProperty('--h', `${window.innerHeight}px`);
-    let dd = _e("#d-d");
-    dd.style.height = `calc(var(--h) - ${Math.floor(dd.getBoundingClientRect().top + 110)}px`;
+    function rSz() {
+        const doc = document.documentElement
+        doc.style.setProperty('--h', `${window.innerHeight}px`);
+        let dd = _e("#d-d");
+        dd.style.height = `calc(var(--h) - ${Math.floor(dd.getBoundingClientRect().top + 110)}px`;
+    }
+    window.addEventListener("resize", rSz);
+    rSz();
     dl = JSON.parse(localStorage.getItem("diary"));
 if(dl===null || !dl) (dl = [], localStorage.setItem("diary", JSON.stringify([])));
 else dl.forEach(a=> ap(a, a.type));
