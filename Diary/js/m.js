@@ -16,7 +16,13 @@ function ap(dt, t, cl, am, location){
         dt.image.length > 0 ? iMg = 'background-image: url(./images/'+dt.image.split("/")[2]+')' : (iMg = 'background-color:var(--bg3)', noImgClass = "no-i-m-g")
         let d = document.createElement("div");
         d.innerHTML = `
-          <div class="i-c-bg p-sm p-r" data-cc="${cc}" style="${iMg}"><p>${dt.title}</p><div class="c-d-ls p-sm"><div class="flex j-c-b"><div>${dt.status === "active" ? `<span class="i-c-o-n-2 e-d-i-t"><img src="./images/edit.svg" class="e-d-i-t"></span>` : ''}</div><div class="p-r"><button type="button" class="i-c-o-n-2 s-o-n ac-t-i-o-ns"><img src="./images/menu.svg"></button></div></div></div>
+          <div class="i-c-bg p-sm p-r" data-cc="${cc}" style="${iMg}"><h4>${dt.title}</h4><p>${dt.text}</p><div class="c-d-ls p-sm"><div class="flex j-c-b"><div>${dt.status === "active" ? `<span class="i-c-o-n-2 e-d-i-t"><img src="./images/edit.svg" class="e-d-i-t"><bdi>Edit</bdi></span>` : ''}</div><div class="p-r s-lg"><button type="button" class="i-c-o-n-2 s-o-n ac-t-i-o-ns"><img src="./images/menu.svg"></button></div><div class="s-sm d-i-c-cc">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="d-i-c-cc" viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+              </svg>
+              <bdi class="d-i-c-cc">Delete</bdi>
+          </div></div></div>
         `;
         d.classList.add("d-r--d", "d-i-b", noImgClass);
         typeof am !== undefined && am === true ? d.classList.add("a-n-i-m-e") : null
@@ -108,6 +114,7 @@ const nr = (obj, type, up) => { //can be reused to edit & update diary records a
     if(type === "diary") {
         obj.type = type;
         obj.status="active";
+        obj.date = new Date();
         if(typeof up === undefined || !up )(obj._id = rm()(20), dl.push(obj), am = true);
         else dl.push(re(obj, up));
         console.log(dl);
@@ -147,6 +154,7 @@ function hdp(to, a) {
     aCtivE(q, "add", [".i-m-g-d-p.a-ctiv-e"]);
     refresh("form#d-iar-y", a, "diary");
     if(iPh()) setTimeout(()=>{_e(".z-tt").classList.add("fd-Dwn")},2000);
+    _e(".v-w-tt").innerHTML = to.title
 }
 const et = (id, type, elt, act)=>{
     const to = dl.find(el=>el._id === id);

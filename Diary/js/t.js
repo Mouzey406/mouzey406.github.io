@@ -86,6 +86,7 @@ const refresh = (t, u) => {
     if(u === "edit" || u === "norm") (w = "Cancel", v = "Lay down your thoughts");
     _e("textarea").setAttribute("placeholder", v)
     _e(".b-c-t-p span").innerText = w
+    _e(".v-w-tt").innerHTML = "";
 }
 
 Array.from(_a(".re-s-tor-e")).forEach(r => r.addEventListener("click", e => {
