@@ -3,6 +3,12 @@
 // }
 let dl = [], eDg = _e(".e-di-t-btn"), cc = 0, currEl, prevEl, to_t, currI, currLocation, lDr = _e(".l-d-r");
 let tCont = _e("[data-t]")
+const iPh = ()=>{
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    return true;
+    }
+    return false;
+}
 function ap(dt, t, cl, am, location){
     cc++;
     if(t==="diary") {
@@ -140,6 +146,7 @@ function hdp(to, a) {
    else { _e(".c--main.a-ctiv-e").style.backgroundImage=`url(${to.image})`; q =  _e(`[data-rep='${spt(to.image, 9, 12)}']`).closest(".i-m-g-d-p"); }
     aCtivE(q, "add", [".i-m-g-d-p.a-ctiv-e"]);
     refresh("form#d-iar-y", a, "diary");
+    if(iPh()) setTimeout(()=>{_e(".z-tt").classList.add("fd-Dwn")},2000);
 }
 const et = (id, type, elt, act)=>{
     const to = dl.find(el=>el._id === id);

@@ -107,3 +107,27 @@ Array.from(_a(".re-s-tor-e")).forEach(r => r.addEventListener("click", e => {
     _e(".a-l-t").classList.remove("a-ctiv-e");
 }}
 }))
+
+    function rMc(t, c, z) { //z for return only
+        if(t.classList.contains(c)) {
+            if(z) return true
+            t.classList.remove(c)
+        }
+    }
+    function aDc(t, c, z) {
+        if(!t.classList.contains(c)) {
+            if(z) return true
+            t.classList.add(c)
+        }
+    }
+
+    _e(".b-g-tt").onclick = ()=>rMc(_e(".t-sQ"), "a-ctiv-e");
+
+    if(iPh()) {
+        _e("#d-f-M").addEventListener("click", e=>{
+            if(!e.target.closest(".z-tt")) {
+                if(rMc(_e(".z-tt"), "fd-Dwn", true)) rMc(_e(".z-tt"), "fd-Dwn")
+                else aDc(_e(".z-tt"), "fd-Dwn")
+            }
+        })
+    }
