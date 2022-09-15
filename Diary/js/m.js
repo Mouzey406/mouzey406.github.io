@@ -68,7 +68,7 @@ _e("#d-iar-y").addEventListener("submit", fo=>{
     if(vi(u)) v++;
     fObj[u.title.toLowerCase()] = u.value;
     });
-    if(v<3) {console.log("wow"); return false;}
+    if(v<2) {console.log("wow"); return false;}
     if(fo.target.dataset.act === "edit" && fo.target.dataset.curr !== "") r = fo.target.dataset.curr //then update to local db
     nr(fObj, "diary", r);
 })
