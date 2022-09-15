@@ -127,7 +127,7 @@ Array.from(_a(".re-s-tor-e")).forEach(r => r.addEventListener("click", e => {
         _e("#d-f-M").addEventListener("click", e=>{
             if(!e.target.closest(".z-tt")) {
                 if(rMc(_e(".z-tt"), "fd-Dwn", true)) rMc(_e(".z-tt"), "fd-Dwn")
-                else aDc(_e(".z-tt"), "fd-Dwn")
+                else aDc(_e("form[data-act='view    '] .z-tt"), "fd-Dwn")
             }
         })
     }
