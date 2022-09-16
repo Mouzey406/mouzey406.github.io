@@ -143,7 +143,7 @@ Array.from(_a(".re-s-tor-e")).forEach(r => r.addEventListener("click", e => {
         // _e(".d-r--d.o-p-e-n").classList.remove("o-p-en")
         return false;
     })
-    _e("#d-a-M").addEventListener("click", e=>{
+    _e("#d-a-M").addEventListener("mousedown", e=>{
   pressTimer = window.setTimeout(function() {
     if(e.target.classList.contains("d-r--d") || e.target.closest(".d-r--d")) {
         let t = e.target;
