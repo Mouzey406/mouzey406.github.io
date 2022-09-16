@@ -145,11 +145,11 @@ Array.from(_a(".re-s-tor-e")).forEach(r => r.addEventListener("click", e => {
     })
     _e("#d-a-M").addEventListener("mousedown", e=>{
   pressTimer = window.setTimeout(function() {
-    if(e.target.classList.contains("d-r--d") || e.target.closest(".d-r--d")) {
-        let t = e.target;
-        if(e.target.closest(".d-r--d")) t = e.target.closest(".d-r--d");
+    // if(e.target.classList.contains("d-r--d") || e.target.closest(".d-r--d")) {
+        let t = e.target.closest(".d-r--d");
+        if(e.target.classList.contains("d-r--d")) t = e.target;
         t.classList.add("o-p-e-n");
-    }
+    // }
   },1000);
   return false; 
 })
