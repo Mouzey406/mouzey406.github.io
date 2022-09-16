@@ -385,7 +385,6 @@ main {
 }
 
 h4 {
-    color: var(--color);
     font-size: 1.3rem;
     font-weight: 400;
 }
@@ -447,11 +446,12 @@ h4 {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical; 
     font-size: 15px;
+    opacity: 0.9;
 }
-.d-r--d:not(.no-i-m-g) p {
+.d-r--d:not(.no-i-m-g) p, .d-r--d:not(.no-i-m-g) h4 {
     color: #ffffff;
 }
-.no-i-m-g p{
+.no-i-m-g p, .no-i-m-g h4{
     color: var(--color);
 }
 .c-d-ls {
@@ -931,26 +931,51 @@ form[data-act="view"] .g-p-lg button:nth-child(2), form[data-act="view"] .i-m-g-
         bottom: 20px;
           }
           .c-d-ls {
-            position: fixed;
-            background-color: var(--bg3);
-            padding: 30px 20px;
-            border-radius: 40px 40px 0 0;
+            display: none;
+            bottom: -98px;
+            left: auto;
+            right: 0;
+            opacity: 1;
             z-index: 2;
-            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+            background-color: var(--bg2);
+            border-radius: 17px;
+            width: 172px;
+          }
+          .o-p-e-n .c-d-ls {
+            display: block;
+          }
+          .c-d-ls::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 7px;
+            max-width: 10px;
+            height: 40px;
+            top: -9px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--bg2);
+            z-index: -1;
           }
           .c-d-ls > .flex {
-           justify-content: space-evenly;
+            flex-direction: column;
+           gap: 20px;
           }
           .i-c-o-n-2, div.d-i-c-cc {
+            width: auto;
+            height: auto;
             display: flex;
             align-items: center;
-            gap: 5px;
-            flex-direction: column;
+            gap: 15px;
             color: var(--color);
+            justify-content: flex-start;
           }
           .light .i-c-o-n-2 img {
             filter: none !important;
             opacity: 0.85;
+          }
+          [data-c] {
+            height: 100%;
           }
   }
   @media(max-width: 568px) {

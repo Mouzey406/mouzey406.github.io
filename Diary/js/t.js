@@ -127,8 +127,30 @@ Array.from(_a(".re-s-tor-e")).forEach(r => r.addEventListener("click", e => {
     if(iPh()) {
         _e("#d-f-M").addEventListener("click", e=>{
             if(!e.target.closest(".z-tt")) {
+                let q = _e("form").dataset.act;
+                if(q !== "view") {
+                    rMc(_e(".z-tt"), "fd-Dwn")
+                    return false;
+                }
                 if(rMc(_e(".z-tt"), "fd-Dwn", true)) rMc(_e(".z-tt"), "fd-Dwn")
-                else aDc(_e("form[data-act='view    '] .z-tt"), "fd-Dwn")
+                else aDc(_e("form[data-act='view'] .z-tt"), "fd-Dwn")
             }
         })
+        
+        let pressTimer;
+        _e("#d-a-M").addEventListener("mouseup", e=>{
+        clearTimeout(pressTimer);
+        // _e(".d-r--d.o-p-e-n").classList.remove("o-p-en")
+        return false;
+    })
+    _e("#d-a-M").addEventListener("click", e=>{
+  pressTimer = window.setTimeout(function() {
+    if(e.target.classList.contains("d-r--d") || e.target.closest(".d-r--d")) {
+        let t = e.target;
+        if(e.target.closest(".d-r--d")) t = e.target.closest(".d-r--d");
+        t.classList.add("o-p-e-n");
+    }
+  },1000);
+  return false; 
+})
     }

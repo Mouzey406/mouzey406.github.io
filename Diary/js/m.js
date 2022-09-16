@@ -153,7 +153,7 @@ function hdp(to, a) {
    else { _e(".c--main.a-ctiv-e").style.backgroundImage=`url(${to.image})`; q =  _e(`[data-rep='${spt(to.image, 9, 12)}']`).closest(".i-m-g-d-p"); }
     aCtivE(q, "add", [".i-m-g-d-p.a-ctiv-e"]);
     refresh("form#d-iar-y", a, "diary");
-    if(iPh()) setTimeout(()=>{_e(".z-tt").classList.add("fd-Dwn")},2000);
+    if(iPh()) setTimeout(()=>{_e(".z-tt").classList.add("fd-Dwn")},3000);
     _e(".v-w-tt").innerHTML = to.title
 }
 const et = (id, type, elt, act)=>{
