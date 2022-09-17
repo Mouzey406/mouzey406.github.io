@@ -1,7 +1,7 @@
 
 // const bh = ()=> {
 // }
-let dl = [], eDg = _e(".e-di-t-btn"), cc = 0, currEl, prevEl, to_t, currI, currLocation, lDr = _e(".l-d-r");
+let dl = [], eDg = _e(".e-di-t-btn"), cc = 0, currEl, prevEl, to_t, currI, currLocation, lDr = _e(".l-d-r"), fdTmt;
 let tCont = _e("[data-t]")
 const iPh = ()=>{
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
@@ -34,6 +34,7 @@ function ap(dt, t, cl, am, location){
             prevEl = currEl.nextSibling;
             if(m_d.classList.contains("a-ctiv-e")) (m_d.classList.remove("a-ctiv-e"), m_d_s = 0);
             if(el.classList.contains("e-d-i-t")) (et(dt._id, "diary", el, "edit"));
+            else if(el.classList.contains("d-i-c-cc")) hd(currI)
             else if(el.classList.contains("ac-t-i-o-ns") || el.matches(".ac-t-i-o-ns img")) more(el)
             else if(dt.status === "active") et(dt._id, "diary", el, "view");
             _e("#d-iar-y").dataset.curr=dt._id;
@@ -153,7 +154,7 @@ function hdp(to, a) {
    else { _e(".c--main.a-ctiv-e").style.backgroundImage=`url(${to.image})`; q =  _e(`[data-rep='${spt(to.image, 9, 12)}']`).closest(".i-m-g-d-p"); }
     aCtivE(q, "add", [".i-m-g-d-p.a-ctiv-e"]);
     refresh("form#d-iar-y", a, "diary");
-    if(iPh()) setTimeout(()=>{_e(".z-tt").classList.add("fd-Dwn")},3000);
+    if(iPh()) fdTmt = setTimeout(()=>{_e(".z-tt").classList.add("fd-Dwn")},3000);
     _e(".v-w-tt").innerHTML = to.title
 }
 const et = (id, type, elt, act)=>{

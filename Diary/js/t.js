@@ -87,6 +87,9 @@ const refresh = (t, u) => {
     _e("textarea").setAttribute("placeholder", v)
     _e(".b-c-t-p span").innerText = w
     _e(".v-w-tt").innerHTML = "";
+    rMc(_e(".b-l-r--d"), "t-ouc-h")
+    if(_e(".d-r--d.o-p-e-n") !== null) _e(".d-r--d.o-p-e-n").classList.remove("o-p-e-n")
+    if(fdTmt) clearTimeout(fdTmt)
 }
 
 Array.from(_a(".re-s-tor-e")).forEach(r => r.addEventListener("click", e => {
