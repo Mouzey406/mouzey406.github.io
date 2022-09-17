@@ -136,21 +136,29 @@ Array.from(_a(".re-s-tor-e")).forEach(r => r.addEventListener("click", e => {
                 else aDc(_e("form[data-act='view'] .z-tt"), "fd-Dwn")
             }
         })
-        
+       if(iPh()) {
         let pressTimer;
-        _e("#d-a-M").addEventListener("mouseup", e=>{
+        let pAr = _e(".b-l-r--d")
+        _e(".b-l-r--d").addEventListener("touchend", e=>{
         clearTimeout(pressTimer);
-        // _e(".d-r--d.o-p-e-n").classList.remove("o-p-en")
         return false;
     })
-    _e("#d-a-M").addEventListener("mousedown", e=>{
-  pressTimer = window.setTimeout(function() {
-    // if(e.target.classList.contains("d-r--d") || e.target.closest(".d-r--d")) {
+    _e(".b-l-r--d").addEventListener("touchstart", e=>{
+  pressTimer = setTimeout(function() {
+    if(e.target.classList.contains("d-r--d") || e.target.closest(".d-r--d")) {
+        if(_e(".d-r--d.o-p-e-n") !== null) _e(".d-r--d.o-p-e-n").classList.remove("o-p-e-n")
         let t = e.target.closest(".d-r--d");
         if(e.target.classList.contains("d-r--d")) t = e.target;
+        pAr.classList.add("t-ouc-h")
         t.classList.add("o-p-e-n");
-    // }
-  },1000);
-  return false; 
-})
+        }
+        console.log("chichi");
+    },500);
+    return true;
+}, {bubble: true})
+}
+_e(".b-g-d").addEventListener("click", ()=>{
+    rMc(_e(".b-l-r--d"), "t-ouc-h")
+    rMc(_e(".d-r--d.o-p-e-n"), "o-p-e-n")
+});
     }
