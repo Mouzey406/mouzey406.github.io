@@ -29,7 +29,8 @@ function ap(dt, t, cl, am, location){
         d.addEventListener("click", e=>{
             currI = dt._id; 
             let el = e.target;
-            currEl = el.closest(".d-r--d")
+            if(el.classList.contains("d-r--d")) currEl = el
+            else currEl = el.closest(".d-r--d")
             prevEl = currEl.nextSibling;
             if(m_d.classList.contains("a-ctiv-e")) (m_d.classList.remove("a-ctiv-e"), m_d_s = 0);
             if(el.classList.contains("e-d-i-t")) (et(dt._id, "diary", el, "edit"));

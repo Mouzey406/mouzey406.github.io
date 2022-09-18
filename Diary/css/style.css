@@ -212,6 +212,9 @@ main {
   height: 20px;
   position: absolute;
   left: 0;
+  top: 50%;
+  left: 0;
+  transform: translateY(-61%);
 }
 .crls--mz.a-ctiv-e::after {
   content: "";
@@ -241,7 +244,7 @@ main {
   border-radius: 13px;
   overflow: hidden;
 }
-[data-c] {
+div[data-c] {
   max-height: 100%;
   overflow-y: auto;
   padding-bottom: 120px;
@@ -412,7 +415,7 @@ h4 {
   font-size: 1.3rem;
   font-weight: 400;
 }
-.s-lg h4 {
+.s-lg h4, .header > div h4 {
   color: var(--color);
 }
 .aDd {
@@ -591,12 +594,9 @@ h4 {
   background-color: #ff000049;
   width: 60px;
 }
-.re-s-tor-e {
-  color: #85ffd4;
-  gap: 0 4px;
-}
-.light .re-s-tor-e {
+button.re-s-tor-e {
   color: #119574;
+  gap: 0 4px;
 }
 .e-di-t-btn {
   display: none;
@@ -952,9 +952,21 @@ label {
   }
   .lt-c {
     position: fixed;
-    top: 0;
+    height: 0%;
+    overflow: hidden;
+    transition:  0.5s;
+    background-color: var(--bg);
+    z-index: 2;
+    top: 55px;
     left: 0;
-    transform: translateX(-100vw);
+    right: 0;
+  }
+  body.a-ctiv-e .lt-c {
+    transform: translate(0);
+    height: calc(var(--h) - 55px);
+  }
+  .inc-s {
+    padding-top: 0;
   }
   .r-aside .search {
     margin-right: 7px;
@@ -1054,14 +1066,22 @@ label {
     border-radius: 17px;
     width: 172px;
   }
+  .tr-a-sh .c-d-ls {
+    display: none !important;
+  }
+  .m-or-e {
+    border-radius: 17px;
+    width: 172px;
+    box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.12) !important;
+  }
 .main > div:nth-last-child(3) .c-d-ls {
     bottom: auto;
     top: -100px;
 }
-  .dark .c-d-ls {
+  .dark .c-d-ls, .dark .m-or-e {
     background-color: var(--bg2);
   }
-  .light .c-d-ls {
+  .light .c-d-ls, .light .m-or-e {
     background-color: #fff;
   }
   .o-p-e-n .c-d-ls {
@@ -1141,6 +1161,21 @@ body.norm .me-nu span:last-child {
   transform: translateY(0px) rotate(0deg);
 animation: sp2-out 0.4s ease-in;
 }
+div[data-c] {
+padding-bottom: 70px;
+}
+button.a-n {
+    padding-left: 24px;
+}
+#d-t-M .header > div {
+    padding-bottom: 10px;
+    width: 100%;
+    border-bottom: 1px solid var(--bg2);
+    margin-bottom: 10px;
+}
+#d-t-M .header > div h4 {
+    text-transform: uppercase;
+}
 }
 @media (max-width: 568px) {
   .i--t.lg,
@@ -1186,7 +1221,10 @@ animation: sp2-out 0.4s ease-in;
     max-width: none;
   }
   .b-l-r--d {
-    flex-direction: column;
+    display: block;
+  }
+  .d-r--d {
+    margin-bottom: 23px;
   }
 }
 @media (min-height: 600px) {

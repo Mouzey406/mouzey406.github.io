@@ -21,8 +21,8 @@ let crs = document.getElementsByClassName("moz-c-r");
     c.addEventListener("click", e=>{
         let t = e.target;
         console.log(t, _e(".crls--mz.a-ctiv-e"))
-        if(c.classList.contains("a-ctiv-e") && c.classList.contains("crls--mz")) return;
-        if(_e(".crls--mz.a-ctiv-e") && c.matches(".crls--mz"))_e(".crls--mz.a-ctiv-e").classList.remove("a-ctiv-e");
+        if(c.classList.contains("a-ctiv-e") && c.classList.contains("crls--mz")) {rMc(_e("body"), "a-ctiv-e"); return};
+        if(_e(".crls--mz.a-ctiv-e") && c.matches(".crls--mz")) (_e(".crls--mz.a-ctiv-e").classList.remove("a-ctiv-e"), rMc(_e("body"), "a-ctiv-e"));
         c.classList.add("a-ctiv-e");
         if(c.classList.contains("pp")) {
             thr(_e("#dt-s"), [["a-ctiv-e"], ["out-ro"]]);
@@ -39,17 +39,25 @@ let core = (t) =>{
     if(m_d.classList.contains("a-ctiv-e") && m_d_s >= 1) {
     if(t.target.matches("#d") || t.target.matches("#d *")) (hd(currI)) //if delete icon or text is also clicked
         m_d.classList.remove("a-ctiv-e");
+        rMc(_e(".tr-a-sh"), "t-ouc-h")
+        rMc(_e(".d-r--d.o-p-e-n"), "o-p-e-n")
     window.removeEventListener("click", c_ps)
     m_d_s = 0;
     }
 }
 
-let more = (t)=> {
+let more = (t, p)=> {
     m_d_s = 0;
-    let po = t.getBoundingClientRect()
+    if(p !== undefined) {
+        m_d.style.top = (p[0] + 20)+"px"
+        m_d.style.right = (18)+"px";
+    }
+    else {
+        let po = t.getBoundingClientRect()
+        m_d.style.top = (po.top + 12)+"px";
+        m_d.style.left = po.left+"px";
+    }
     m_d.classList.add("a-ctiv-e")
-    m_d.style.top = (po.top + 20)+"px";
-    m_d.style.left = po.left+"px";
     c_ps = e => {
         core(e)
     }
@@ -139,29 +147,42 @@ Array.from(_a(".re-s-tor-e")).forEach(r => r.addEventListener("click", e => {
                 else aDc(_e("form[data-act='view'] .z-tt"), "fd-Dwn")
             }
         })
-       if(iPh()) {
+        let mbEs = _a(".b-l-r--d");
+        for (let jj = 0; jj < mbEs.length; jj++) {
+        const jk = mbEs[jj];
         let pressTimer;
-        let pAr = _e(".b-l-r--d")
-        _e(".b-l-r--d").addEventListener("touchend", e=>{
-        clearTimeout(pressTimer);
+        let pAr = jk
+        jk.addEventListener("touchend", e=>{
+        clearTimeout(pressTimer);   
         return false;
     })
-    _e(".b-l-r--d").addEventListener("touchstart", e=>{
+    jk.addEventListener("touchstart", e=>{
   pressTimer = setTimeout(function() {
     if(e.target.classList.contains("d-r--d") || e.target.closest(".d-r--d")) {
         if(_e(".d-r--d.o-p-e-n") !== null) _e(".d-r--d.o-p-e-n").classList.remove("o-p-e-n")
-        let t = e.target.closest(".d-r--d");
+        let t;
         if(e.target.classList.contains("d-r--d")) t = e.target;
+        else t = e.target.closest(".d-r--d")
         pAr.classList.add("t-ouc-h")
         t.classList.add("o-p-e-n");
+        if(document.body.dataset.cA === "d-t-M") {
+            let jl = t.getBoundingClientRect();
+            console.log(jl.bottom, jl.right);
+            more(t, [jl.bottom, jl.right])
+            return
+        }
         }
         console.log("chichi");
     },500);
     return true;
 }, {bubble: true})
-}
-_e(".b-g-d").addEventListener("click", ()=>{
-    rMc(_e(".b-l-r--d"), "t-ouc-h")
-    rMc(_e(".d-r--d.o-p-e-n"), "o-p-e-n")
-});
+            
+        }
+
+Array.from(_a(".b-g-d")).forEach(b=>{
+   b.addEventListener("click", ()=>{
+        rMc(b.closest(".b-l-r--d"), "t-ouc-h")
+        rMc(_e(".d-r--d.o-p-e-n"), "o-p-e-n")
+    });
+})
     }
