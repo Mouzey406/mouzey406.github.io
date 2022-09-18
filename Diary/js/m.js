@@ -38,6 +38,7 @@ function ap(dt, t, cl, am, location){
             if(el.classList.contains("d-r--d")) currEl = el;
             else currEl = el.closest(".d-r--d");
             prevEl = currEl.nextSibling;
+            _e("#d-iar-y").dataset.curr=dt._id;
             currLocation = dt.status === "active" ? "view" : "trash";
         }
         d.addEventListener("click", e=>{
