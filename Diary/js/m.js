@@ -26,6 +26,12 @@ function ap(dt, t, cl, am, location){
         d.classList.add("d-r--d", "d-i-b", noImgClass);
         typeof am !== undefined && am === true ? d.classList.add("a-n-i-m-e") : null
         currEl = d;
+        if(iPh())d.ontouchstart = (e)=>{currI = dt._id; let el = e.target;
+            if(el.classList.contains("d-r--d")) currEl = el;
+            else currEl = el.closest(".d-r--d");
+            prevEl = currEl.nextSibling;
+            currLocation = dt.status === "active" ? "view" : "trash";
+        }
         d.addEventListener("click", e=>{
             currI = dt._id; 
             let el = e.target;
