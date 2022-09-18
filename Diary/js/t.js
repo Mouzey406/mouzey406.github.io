@@ -112,6 +112,8 @@ Array.from(_a(".re-s-tor-e")).forEach(r => r.addEventListener("click", e => {
         ap(dl[l], "diary", prevEl, true, "view");
         currI = null
         localStorage.setItem(dl[l].type, JSON.stringify(dl))
+        _e(".r-ms-g").classList.add("a-ctiv-e");
+        setTimeout(()=>{_e(".r-ms-g").classList.remove("a-ctiv-e")}, 3000);
     }
     catch(e) {
         console.log(e);
@@ -151,7 +153,6 @@ Array.from(_a(".re-s-tor-e")).forEach(r => r.addEventListener("click", e => {
         for (let jj = 0; jj < mbEs.length; jj++) {
         const jk = mbEs[jj];
         let pressTimer;
-        let pAr = jk
         jk.addEventListener("touchend", e=>{
         clearTimeout(pressTimer);   
         return false;
@@ -163,7 +164,7 @@ Array.from(_a(".re-s-tor-e")).forEach(r => r.addEventListener("click", e => {
         let t;
         if(e.target.classList.contains("d-r--d")) t = e.target;
         else t = e.target.closest(".d-r--d")
-        pAr.classList.add("t-ouc-h")
+        jk.classList.add("t-ouc-h")
         t.classList.add("o-p-e-n");
         if(document.body.dataset.cA === "d-t-M") {
             let jl = t.getBoundingClientRect();

@@ -558,6 +558,24 @@ h4 {
   border-radius: 3px;
   overflow: hidden;
 }
+.r-ms-g {
+    display: block;
+    position: fixed;
+    bottom: 35px;
+    right: 20px;
+    box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.12);
+    z-index: 10;
+    width: 95%;
+    max-width: 270px;
+    transition: transform 0.3s;
+}
+.r-ms-g svg {
+    cursor: pointer;
+    color: var(--bg4);
+}
+.r-ms-g:focus, .r-ms-g:not(.a-ctiv-e) {
+    transform: translateY(100px);
+}
 .m-or-e button {
   color: var(--color2);
   transition: 0.12s;
@@ -636,16 +654,18 @@ form[data-act="view"] .t-sQ {
 
 /* search  */
 .ss {
-  display: none;
   background-color: var(--bg);
-  height: calc(var(--h) - 55px);
   top: 55px;
+  height: 0%;
+  overflow: hidden;
   z-index: 1;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: opacity 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 .ss.a-ctiv-e {
-  display: block;
-  -webkit-animation: fade-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: fade-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  opacity: 1;
+  height: calc(var(--h) - 55px);
 }
 .d-x {
   display: block;
@@ -695,6 +715,9 @@ label {
 }
 .ss-r-l-ts {
   min-height: 300px;
+  max-width: 600px;
+  margin: 20px auto 0 auto;
+  max-height: calc(var(--h) - 270px);
   overflow-y: auto;
   position: relative;
 }
@@ -758,6 +781,7 @@ label {
   line-height: 30px;
   margin-top: 4px;
   margin-bottom: 4px;
+  word-break: break-all;
 }
 .sr_i--t p,
 .sr_i--t span {
@@ -847,6 +871,22 @@ label {
     opacity: 1;
   }
 }
+@-webkit-keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 
 @keyframes l-n-g {
   0% {
@@ -934,6 +974,12 @@ label {
     transform: translateY(-4px);
   }
   .me-nu {
+    display: none;
+  }
+  .m-or-e {
+    right: auto !important;
+  }
+  .n-d-t {
     display: none;
   }
 }
@@ -1175,6 +1221,17 @@ button.a-n {
 }
 #d-t-M .header > div h4 {
     text-transform: uppercase;
+}
+.d-r--d .i-c-bg {
+    padding-bottom: 40px;
+}
+.n-d-t {
+    position: absolute;
+    left: 15px;
+    bottom: 16px;
+    font-size: 10px;
+    color: var(--color);
+    opacity: 0.8;
 }
 }
 @media (max-width: 568px) {
