@@ -1243,10 +1243,10 @@ button.a-n {
     opacity: 0.8;
 }
 .s-bar span img {
-    width: 1px;
+    width: 18px;
 }
 .contrast .mode {
-    transform: scale(0.91);
+    transform: scale(0.86);
 }
 }
 @media (max-width: 568px) {
