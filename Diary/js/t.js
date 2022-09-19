@@ -12,7 +12,9 @@ mode.addEventListener("click", e=>{
 });
 const thr = (el, [a,b]) => {
     el.classList.contains(...a) ? (el.classList.add(...b), el.classList.remove(...a)) : (el.classList.add(...a), el.classList.remove(...b));
-    document.body.dataset.cA = el.getAttribute("id")
+    let elAtt = el.getAttribute("id");
+    console.log(elAtt);
+    if(elAtt!==null&&elAtt!=="")document.body.dataset.cA = elAtt
 }
 
 //controllers
@@ -40,7 +42,7 @@ let core = (t) =>{
     if(t.target.matches("#d") || t.target.matches("#d *")) (hd(currI)) //if delete icon or text is also clicked
         m_d.classList.remove("a-ctiv-e");
         rMc(_e(".tr-a-sh"), "t-ouc-h")
-        rMc(_e(".d-r--d.o-p-e-n"), "o-p-e-n")
+        if(_e(".d-r--d.o-p-e-n")) rMc(_e(".d-r--d.o-p-e-n"), "o-p-e-n")
     window.removeEventListener("click", c_ps)
     m_d_s = 0;
     }
