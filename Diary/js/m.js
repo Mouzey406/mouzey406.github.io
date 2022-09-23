@@ -95,17 +95,21 @@ const hd = e => {
     const r_to_t = () =>(c_to_t(), to_t = setTimeout(()=>{g.classList.remove("a-ctiv-e"); g.removeEventListener("mouseover", c_to_t)},3500));
     r_to_t();
     let t_e = dl.findIndex(a=>a._id === e);
-    dl[t_e].status = "deleted";
     reDom(currEl)
-    ap(dl[t_e], "diary");
     rMc(_e(".b-l-r--d"), "t-ouc-h")
-    if(currLocation === "view") {
+    if(currLocation === "trash") {
+       dl.splice(t_e, 1);
+    }
+    else {
+        dl[t_e].status = "deleted";
+        ap(dl[t_e], "diary");
         g.classList.add("a-ctiv-e");
         g.addEventListener("mouseover", c_to_t);
         g.addEventListener("mouseleave", r_to_t);
+        rMc(_e(".b-l-r--d"), "t-ouc-h")
     }
     try {
-        localStorage.setItem(dl[t_e].type, JSON.stringify(dl));
+        localStorage.setItem("diary", JSON.stringify(dl));
     } catch (error) {
         console.log(error);
     }

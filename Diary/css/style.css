@@ -295,7 +295,7 @@ div[data-c] {
   background-color: transparent;
   border: none;
   padding: 0px 0 10px 0;
-  color: var(--color2);
+  color: var(--color);
   outline: none;
 }
 .shares {
@@ -387,7 +387,7 @@ div[data-c] {
 .f-s--mz button:not(:nth-of-type(1)) {
   padding: 10px 24px;
   border-radius: 30px;
-  color: var(--color2);
+  color: #fff;
   background-color: var(--bg4);
   font-size: 15px;
   font-weight: 500;
