@@ -81,10 +81,11 @@ document.querySelectorAll(".i-m-g-d-p").forEach(i=>{
     i.addEventListener("click", ()=>{
         aCtivE(i, "add", [".i-m-g-d-p.a-ctiv-e"]);
         let iP = i.closest(".c--main");
-        if(i.classList.contains("i-n-n")) {iP.style.backgroundImage = "none";_e("#i-p-h").value=img;return}
+        if(i.classList.contains("i-n-n")) {iP.style.backgroundImage = "none"; iP.classList.remove("has-img"); _e("#i-p-h").value=""; return}
         let img = i.querySelector("img").getAttribute("src");
         _e("#i-p-h").value=img;
         iP.style.backgroundImage=`url(${img})`;
+        iP.classList.add("has-img");
     })
     })
 
