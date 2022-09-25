@@ -92,7 +92,7 @@ document.querySelectorAll(".i-m-g-d-p").forEach(i=>{
 const refresh = (t, u) => {
     let ta  = _e(t), v = "", w = "";
     ta.dataset.act = u;
-    if(u === "norm") (Array.from(ta.querySelectorAll(".i--t")).forEach(i=>{i.value=""; i.classList.remove("has-e")}), _e(t).dataset.curr="", aCtivE(_e(".i-n-n"), "add", [".i-m-g-d-p.a-ctiv-e"]), _e(".i-n-n").closest(".c--main").style.backgroundImage = "none")
+    if(u === "norm") (Array.from(ta.querySelectorAll(".i--t")).forEach(i=>{i.value=""; i.classList.remove("has-e")}), _e(t).dataset.curr="", aCtivE(_e(".i-n-n"), "add", [".i-m-g-d-p.a-ctiv-e"]), _e(".i-n-n").closest(".c--main").style.backgroundImage = "none", rMc(_e("#d-f-M"), "has-img"), _e("#f-dt").innerText =  "")
     if(u === "view") (Array.from(ta.querySelectorAll(".i--t")).forEach(i=>i.setAttribute("readonly", true)))
     else{Array.from(ta.querySelectorAll(".i--t")).forEach(i=>{if(i.hasAttribute("readonly"))i.removeAttribute("readonly")})}
     if(u === "edit" || u === "norm") (w = "Cancel", v = "Lay down your thoughts");
@@ -104,7 +104,6 @@ const refresh = (t, u) => {
     if(_e(".d-r--d.o-p-e-n") !== null) _e(".d-r--d.o-p-e-n").classList.remove("o-p-e-n")
     if(fdTmt) clearTimeout(fdTmt)
 }
- 
 
 
 Array.from(_a(".re-s-tor-e")).forEach(r => r.addEventListener("click", e => {
