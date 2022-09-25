@@ -1053,10 +1053,10 @@ label {
     top: -1%; 
       right: -1%;
       height: 50%;
-      transform: rotateY(183deg) rotate(224deg);
+      transform: rotateY(183deg) rotate(230deg);
       opacity: 0.4;
       filter: var(--filter);
-      width: 45%;
+      width: 37%;
       object-fit: contain;
   }
 }
@@ -1069,13 +1069,13 @@ label {
   }
   .n-img {
     position: absolute;
-    bottom: -5%; 
-      right: auto;
-      height: 65%;
+    bottom: 19%; 
+      right: 20%;
+      height: 60px;
       transform: rotateY(179deg) rotate(120deg);
       opacity: 0.4;
       filter: var(--filter);
-      width: 45%;
+      width: 58%;
       object-fit: contain;
 }
   .s-lg {
@@ -1334,6 +1334,12 @@ button.a-n {
 .contrast .mode {
     transform: scale(0.86);
 }
+main {
+  background-color: var(--bg);
+}
+main > .g-width {
+  width: 100%;
+}
 }
 @media (max-width: 568px) {
   .i--t.lg,
@@ -1352,12 +1358,6 @@ button.a-n {
   }
   .d-i {
     background-color: transparent;
-  }
-  main {
-    background-color: var(--bg);
-  }
-  main > .g-width {
-    width: 100%;
   }
   form label {
     bottom: auto;

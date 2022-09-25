@@ -90,7 +90,7 @@ function ap(dt, t, cl, am, location){
     dA = JSON.parse(localStorage.getItem("dq-theme"));
 if(dl===null || !dl) (dl = [], localStorage.setItem("diary", JSON.stringify([])));
 else dl.forEach(a=> ap(a, a.type));
-if(dA === null) (dA = [{theme: "dark"}], localStorage.setItem("dq-theme", JSON.stringify(dA)), aDc(_e("body"), "dark"))
+if(dA === null) (dA = [{theme: "dark"}], localStorage.setItem("dq-theme", JSON.stringify(dA)), _e("body").classList.add("dark"))
 else _e("body").classList.add(dA[0].theme);
 })();
 _e("#d-iar-y").addEventListener("submit", fo=>{
