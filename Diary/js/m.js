@@ -1,7 +1,7 @@
 
 // const bh = ()=> {
 // }
-let dl = [], eDg = _e(".e-di-t-btn"), cc = 0, currEl, prevEl, to_t, currI, currLocation, lDr = _e(".l-d-r"), fdTmt;
+let dl = [], dA = [], eDg = _e(".e-di-t-btn"), cc = 0, currEl, prevEl, to_t, currI, currLocation, lDr = _e(".l-d-r"), fdTmt;
 let tCont = _e("[data-t]")
 const iPh = ()=>{
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
@@ -16,6 +16,15 @@ const daT = d => {
     console.log(de, d);
     const df = dd.getMonth();
     return de === ad.getDate() && df === ad.getMonth() ? "Today" : de < ad.getDate() && df === ad.getMonth() ? "1 day ago" : d;
+}
+const nonce = () => {
+    let activeDl = dl.filter(d=>d.status === "active");
+    if(activeDl.length === 0) {
+       _e(".nonce").classList.add("in");
+    }
+    else {
+        _e(".nonce").classList.remove("in");
+    }
 }
 function ap(dt, t, cl, am, location){
     cc++;
@@ -61,6 +70,7 @@ function ap(dt, t, cl, am, location){
         if(cl != undefined && typeof cl == "object" && _a(".d-r--d").length > 2) {let m = cl.previousSibling; if(m) m.after(d); else _e("[data-c]").prepend(d)}
         else _e("[data-c]").prepend(d);
     }
+    nonce()
 }
 (function() {
     function rSz() {
@@ -72,8 +82,11 @@ function ap(dt, t, cl, am, location){
     window.addEventListener("resize", rSz);
     rSz();
     dl = JSON.parse(localStorage.getItem("diary"));
+    dA = JSON.parse(localStorage.getItem("dq-theme"));
 if(dl===null || !dl) (dl = [], localStorage.setItem("diary", JSON.stringify([])));
 else dl.forEach(a=> ap(a, a.type));
+if(dA === null) (dA = [{theme: "dark"}], localStorage.setItem("dq-theme", JSON.stringify(dA)), aDc(_e("body"), "dark"))
+else _e("body").classList.add(dA[0].theme);
 })();
 _e("#d-iar-y").addEventListener("submit", fo=>{
     let r = false; //flag: update?
@@ -113,6 +126,7 @@ const hd = e => {
     } catch (error) {
         console.log(error);
     }
+    nonce();
 }
 
 const reDom = (el, clEl, dt) => { //div, closest sibling, object data 
@@ -227,3 +241,5 @@ const sh = dt => {
         });
     }
 }
+
+nonce()

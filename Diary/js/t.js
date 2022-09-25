@@ -9,11 +9,12 @@ let aCtivE = (t, a="add", collection)=> {
 mode.addEventListener("click", e=>{
     thr(mode, [["moon"], ["sun"]]);
     thr(document.querySelector("body"), [["light"], ["dark"]])
+    let c = _e("body").classList[0];
+    localStorage.setItem("dq-theme", JSON.stringify([{theme: c}]));
 });
 const thr = (el, [a,b]) => {
     el.classList.contains(...a) ? (el.classList.add(...b), el.classList.remove(...a)) : (el.classList.add(...a), el.classList.remove(...b));
     let elAtt = el.getAttribute("id");
-    console.log(elAtt);
     if(elAtt!==null&&elAtt!=="")document.body.dataset.cA = elAtt
 }
 
@@ -102,6 +103,8 @@ const refresh = (t, u) => {
     if(_e(".d-r--d.o-p-e-n") !== null) _e(".d-r--d.o-p-e-n").classList.remove("o-p-e-n")
     if(fdTmt) clearTimeout(fdTmt)
 }
+ 
+
 
 Array.from(_a(".re-s-tor-e")).forEach(r => r.addEventListener("click", e => {
     if(currI !== undefined && currI !== null)  {
@@ -122,6 +125,7 @@ Array.from(_a(".re-s-tor-e")).forEach(r => r.addEventListener("click", e => {
     }
     _e(".a-l-t").classList.remove("a-ctiv-e");
 }}
+nonce();
 }))
 
     function rMc(t, c, z) { //z for return only
@@ -189,3 +193,4 @@ Array.from(_a(".b-g-d")).forEach(b=>{
     });
 })
     }
+
