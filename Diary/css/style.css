@@ -506,10 +506,6 @@ h4 {
   z-index: 2;
 }
 .d-r--d {
-  display: inline-block;
-  max-width: 350px;
-  min-width: 200px;
-  margin-right: 20px;
   cursor: default;
   transition: 0.2s ease-in-out;
   margin-bottom: 20px;
@@ -1059,6 +1055,12 @@ label {
       width: 37%;
       object-fit: contain;
   }
+  .d-r--d {
+    display: inline-block;
+    max-width: 350px;
+    min-width: 200px;
+    margin-right: 20px;
+  }
 }
 @media (max-width: 920px) {
   header {
@@ -1327,6 +1329,8 @@ button.a-n {
     font-size: 10px;
     color: var(--color);
     opacity: 0.8;
+    -webkit-user-select: none;
+    user-select: none;
 }
 .s-bar span img {
     width: 18px;

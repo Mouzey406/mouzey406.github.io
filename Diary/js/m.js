@@ -87,11 +87,15 @@ function ap(dt, t, cl, am, location){
     window.addEventListener("resize", rSz);
     rSz();
     dl = JSON.parse(localStorage.getItem("diary"));
-    dA = JSON.parse(localStorage.getItem("dq-theme"));
+    let fDa = JSON.parse(localStorage.getItem("dq-theme"));
 if(dl===null || !dl) (dl = [], localStorage.setItem("diary", JSON.stringify([])));
 else dl.forEach(a=> ap(a, a.type));
-if(dA === null) (dA = [{theme: "dark"}], localStorage.setItem("dq-theme", JSON.stringify(dA)), _e("body").classList.add("dark"))
-else _e("body").classList.add(dA[0].theme);
+if(fDa === null) (dA = [{theme: "dark"}], localStorage.setItem("dq-theme", JSON.stringify(dA)), _e("body").classList.add("dark"))
+else {dA = fDa;
+     _e("body").classList.add(dA[0].theme);
+     let moD = dA[0].theme === "dark" ? "moon" : "sun";
+     _e(".mode").classList.add(moD)
+}
 })();
 _e("#d-iar-y").addEventListener("submit", fo=>{
     let r = false; //flag: update?

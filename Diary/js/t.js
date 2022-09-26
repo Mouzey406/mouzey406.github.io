@@ -52,7 +52,7 @@ let core = (t) =>{
 let more = (t, p)=> {
     m_d_s = 0;
     if(p !== undefined) {
-        m_d.style.top = (p[0] + 20)+"px"
+        m_d.style.top = (p[0] + 9)+"px"
         m_d.style.right = (18)+"px";
     }
     else {
