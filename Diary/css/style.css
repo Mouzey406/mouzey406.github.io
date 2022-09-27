@@ -361,7 +361,9 @@ div[data-c] {
 .dt-d {
   color: var(--color);
   opacity: 0.6;
-  font-size: 1rem;
+}
+.has-img .dt-d {
+  color: #fff;
 }
 [data-act="edit"] .v-w-tt, [data-act="edit"] .hd-date{
   display: none;
@@ -1061,6 +1063,9 @@ label {
     min-width: 200px;
     margin-right: 20px;
   }
+  .dt-d {
+  font-size: 1rem;
+  }
 }
 @media (max-width: 920px) {
   header {
@@ -1068,6 +1073,9 @@ label {
   }
   .light .i-c-o-n-2 svg {
     fill: #000000;
+  }
+  .dt-d {
+    font-size: 0.9rem;
   }
   .n-img {
     position: absolute;
@@ -1171,7 +1179,7 @@ label {
     transform: translateY(100px);
     opacity: 0;
   }
-  .header {
+  #d-a-M .header {
     padding: 0;
   }
   .d-x {
@@ -1213,13 +1221,13 @@ label {
     width: 172px;
     box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.12) !important;
   }
-div.main > div:first-child .c-d-ls {
+  div.main > div:first-child .c-d-ls {
     bottom: -98px;
     top: auto;
-}
+  }
 .main > div:nth-last-child(3) .c-d-ls {
-    bottom: auto;
-    top: -100px;
+  bottom: auto;
+  top: -100px;
 }
   .dark .c-d-ls, .dark .m-or-e {
     background-color: var(--bg2);
@@ -1288,8 +1296,14 @@ div.main > div:first-child .c-d-ls {
   .me-nu span:last-child {
     bottom: 0;
   }
+  .tr-a-sh .d-r--d {
+    width: 100%;
+  }
+  #d-t-M .header {
+    padding-bottom: 0;
+  }
   body.a-ctiv-e .me-nu span:first-child {
-        transform: translateY(5px) rotate(45deg);
+    transform: translateY(5px) rotate(45deg);
     animation: sp1 0.4s ease-in;
   }
   body.a-ctiv-e .me-nu span:last-child {
@@ -1387,6 +1401,14 @@ main > .g-width {
   }
   .d-r--d {
     margin-bottom: 23px;
+  }
+  .dt-d {
+  font-size: 0.8rem;
+  }
+  .hd-date {
+    position: fixed;
+    bottom: 31px;
+    left: 12px;
   }
 }
 @media (min-height: 600px) {

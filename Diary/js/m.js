@@ -20,7 +20,9 @@ const daT = (d, i) => {
     console.log(de, d);
     const df = dd.getMonth();
     if(i) return dYs[dd.getDay()] + " " + mTh[df] + " " +de;
-    return de === ad.getDate() && df === ad.getMonth() ? "Today" : de < ad.getDate() && df === ad.getMonth() ? "1 day ago" : d;
+    console.log(dd.getFullYear() == ad.getFullYear());
+    return Number(dd.getFullYear()) !== Number(ad.getFullYear()) ? "years ago" : de === ad.getDate() && df === ad.getMonth() ? "Today" : Number(ad.getDate()) - Number(de) === 1 && df === ad.getMonth() ? "1 day ago" : Number(ad.getDate()) - Number(de) > 1 && df === ad.getMonth() ? `${Number(ad.getDate()) - Number(de)} days ago` : Number(ad.getMonth()) - Number(df) === 1 ? '1 Month ago' : Number(ad.getMonth()) - Number(df) > 1 ? `${Number(ad.getMonth()) - Number(df)} Months ago` : d;
+    debugger;
 }
 const nonce = () => {
     let activeDl = dl.filter(d=>d.status === "active");
@@ -199,6 +201,7 @@ function hdp(to, a) {
     refresh("form#d-iar-y", a, "diary");
     if(iPh()) fdTmt = setTimeout(()=>{_e(".z-tt").classList.add("fd-Dwn")},3000);
     _e(".v-w-tt").innerHTML = to.title
+    if(iPh)
     _e("#f-dt").innerText =  daT(to.date, false) + " ~ " + daT(to.date, true);
 
 }
