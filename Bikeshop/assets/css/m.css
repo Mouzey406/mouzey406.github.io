@@ -1,0 +1,196 @@
+html {
+    font-size: 16px;
+    font-family: 'Outfit', sans-serif;
+}
+::placeholder, input, textarea, select, option, button, a, p, span {
+    font-family: 'Outfit', sans-serif;
+}
+:root {
+    --mc: #141414;
+    --nmc: #1b1b1b;
+    --bg: rgb(19, 18, 18);
+    --bg-2: rgb(61, 61, 61);
+    --color: #f56c32;
+    --color-2: #ead2b7;
+}
+.cst-g-w {
+    max-width: 800px;
+    margin: 0 auto;
+}
+main {
+    min-height: 100vh;
+    /* max-width: 1500px; */
+    margin: 0 auto;
+}
+p, span {
+    color: var(--color-2);
+}
+a, button, button span {
+    color: var(--color);
+}
+button {
+    cursor: pointer;
+}
+span {
+    display: block;
+}
+img {
+    display: block;
+}
+.p-c {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-2);
+    border-radius: 100%;
+    cursor: pointer;
+}
+.p-c span{
+    display: none;
+}
+.p-c i {
+    font-size: 30px;
+    position: relative;
+    top: 1px;
+}
+.a-c.r-tt {
+    width: 100%;
+    object-fit: cover;
+    left: auto;
+    width: 80%;
+}
+.a-c {
+    height: 100%;
+}
+/* nav  */
+header {
+    background-color: var(--nmc);
+    color: var(--color-2);
+    width: 20%;
+    max-width: 300px;
+}
+ul {
+    list-style: none;
+}
+
+.m-n-i{
+    margin-bottom: 23px;
+    padding: 2px 20px;
+    position: relative;
+    cursor: pointer;
+}
+.m-n-i::before, .m-n-i::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 0%;
+    background-color: var(--color);
+    transition: 0.3s;
+}
+.m-n-i::before {
+    bottom: 50%;
+    border-top-right-radius: 3px;
+}
+.m-n-i::after {
+    top: 50%;
+    border-bottom-right-radius: 3px;
+}
+.m-n-i.ive::before, .m-n-i.ive::after {
+    height: 50%;
+}
+.m-n-i span{
+    display: block;
+    margin-left: 16px;
+}
+.m-n-i.ive {
+    color: var(--color);
+}
+/* nav ends  */
+/* main  */
+.main {
+    background-color: rgb(20, 20, 20);
+    position: relative;
+    overflow-x: hidden;
+    flex: 1;
+}
+.view-mz {
+    z-index: 2;
+}
+/* view 1  */
+.b--s {
+    padding-bottom: 10px;
+    gap: 7px;
+    border-bottom: 2px solid var(--nmc);
+}
+.s-b-n {
+    font-size: 16px;
+    color: var(--color-2);
+}
+#ss {
+    display: block;
+    flex: 1;
+    background-color: transparent;
+    padding: 14px;
+    border: none;
+    font-size: 15px;
+    outline: none;
+    color: var(--color-2);
+}
+
+.bk {
+    width: 25%;
+    /* border: 2px solid var(--nmc); */
+    background-color: #0f0f0f;
+    min-height: 200px;
+    /* border-radius: 12px; */
+    overflow: hidden;
+    position: relative;
+}
+.b-save {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    color: var(--color);
+    font-size: 14px;
+    z-index: 1;
+}
+.b-ig {
+    padding-bottom: 65%;
+    position: relative;
+}
+.b-ig img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+.b-ct {
+    color: var(--color-2);
+}
+.b-ct h3 {
+    color: #fff;
+}
+.pri {
+    font-size: 13px;
+    color: var(--color);
+    position: relative;
+    /* top: 80px; */
+}
+.loc span, .type, .spc-r {
+    margin-left: 6px;
+}
+.loc, .type {
+    font-size: 13px;
+}
+.b-t-c-r {
+    gap: 30px;
+}
+.b-t-c-r button {
+    padding: 12px 0px;
+}

@@ -1,0 +1,11 @@
+{
+  "name": "bikeshop",
+  "version": "1.0.0",
+  "description": "A program that allows you to rent bikes",
+  "main": "index.js",
+  "scripts": {
+    "test": "mz-test"
+  },
+  "author": "",
+  "license": "ISC"
+}
