@@ -267,6 +267,9 @@ ul {
     grid-area: more-detail;
     padding-top: 40px;
     border-top: 2px solid rgb(178, 178, 178);
+        opacity: 1;
+        transform: translateY(0);
+        transition: 0.3s ease;
 }
 .m-de-ta-il > div {
     flex-wrap: wrap;
@@ -354,11 +357,13 @@ ul {
     margin: 0;
 }
 .d-tfm .b-c, .d-tfm .price-tag, .d-tfm .m-de-ta-il {
-    display: none;
+    transform: translateY(100px);
+    opacity: 0;
 }
-.bk-d:not(.d-tfm) .b-ct {
+.bk-d:not(.d-tfm) .b-ct, .bk-d:not(.d-tfm) .m-de-ta-il {
     transition-delay: 0.2s;
 }
+
 .d-tfm .b-ct {
     transform: translateY(90%);
 }
@@ -367,6 +372,7 @@ ul {
     overflow: hidden;
 }
 .sm-view {
+    height: 100%;
     width: 38%;
     display: flex;
     align-items: center;

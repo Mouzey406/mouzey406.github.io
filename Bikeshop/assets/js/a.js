@@ -37,7 +37,7 @@ const switchView = (q) => {
    if(dispE.classList.contains("d-tfm")) {
        dispE.classList.remove("d-tfm");
     setTimeout(() => {
-        smE.classList.remove("hid");
+        smE.classList.add("hid");
     }, 400);
        return;
     }
