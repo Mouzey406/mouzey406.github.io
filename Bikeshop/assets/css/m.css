@@ -201,8 +201,12 @@ ul {
     max-height: 80%;
     object-fit: contain;
 }
+.d-lft {
+    height: 100%;
+}
 .b-ct {
     color: var(--color-2);
+    transform: translate(0);
     will-change: transform;
     transition: transform 0.2s ease;
 }
@@ -256,6 +260,7 @@ ul {
 }
 .de-ta-il {
     grid-area: detail;
+    height: calc(100vh / 2 - 50px);
 }
 .de-ta-il > div:nth-child(1) {
     width: 30%;
@@ -324,6 +329,7 @@ ul {
 .price-tag {
     font-size: 1.4rem;
     margin-bottom: 30px;
+    transition: 0.2s ease;
 }
 .b-c {
     display: inline-block;
@@ -331,6 +337,7 @@ ul {
     background-color: #ffffffe7;
     font-size: 1rem;
     font-weight: 500;
+    transition: 0.2s ease;
 }
 .cr-div span {
     margin-right: 10px;
@@ -353,19 +360,15 @@ ul {
     align-items: flex-end !important;
     min-height: 520px;
 }
-.d-tfm .d-lft h2 {
-    margin: 0;
-}
 .d-tfm .b-c, .d-tfm .price-tag, .d-tfm .m-de-ta-il {
     transform: translateY(100px);
     opacity: 0;
 }
-.bk-d:not(.d-tfm) .b-ct, .bk-d:not(.d-tfm) .m-de-ta-il {
+.bk-d:not(.d-tfm) .b-ct, .bk-d:not(.d-tfm) .b-ct .price-tag, .bk-d:not(.d-tfm) .b-ct .b-c, .bk-d:not(.d-tfm) .m-de-ta-il  {
     transition-delay: 0.2s;
 }
-
 .d-tfm .b-ct {
-    transform: translateY(90%);
+    transform: translateY(65%);
 }
 .sm-view.hid {
     height: 0%;
@@ -388,14 +391,37 @@ ul {
     height: 100%;
     opacity: 1;
 }
-
+.sm-view span {
+    cursor: pointer;
+}
 .eq-c {
     flex-wrap: wrap;
 }
 .eq-c > span {
-    width: 20%;
-    height: 50px;
+    position: relative;
+    width: 30%;
+    height: 130px;
     border: 2px solid grey;
+    padding-top: 6px;
+    transition: 0.3s ease;
+}
+.eq-c > span:hover, .eq-c span.ing, .sz-es span:hover, .sz-es span.ing {
+    background-color: #ffffff42;
+    border-color: var(--color-2);
+}
+.eq-c span bdi {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 4px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.eq-c img {
+    width: 90%;
+    margin: 0 auto;
 }
 .sz-es {
     margin: 45px 0;
@@ -414,6 +440,7 @@ ul {
     align-items: center;
     justify-content: center;
     font-size: 24px;
+    transition: 0.3s ease;
 }
 .sz-es > div > span:focus {
     border-color: solid var(--color);
@@ -431,6 +458,13 @@ select {
     outline: none;
     cursor: pointer;
 }
+.cl-c {
+    margin-top: 30px;
+}
+.cl-c span {
+    width: 35px;
+    height: 35px;
+    }
 .ch-ut {
     margin-top: 45px;
 }
