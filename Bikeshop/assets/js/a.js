@@ -1,6 +1,8 @@
+'use strict';
+
 let bikesP = document.getElementById("bs");
 let dispE = document.getElementById("dy")
-let viewE = document.getElementById("vw-1");
+let viewE = document.getElementById("vw-1"), viewSwitchers = document.getElementsByClassName("vw-st");
 let bVwE = document.getElementById("b-vw-1");
 let rentE = document.getElementById("re-nt"), smE = document.querySelector(".sm-view");
 
@@ -14,6 +16,23 @@ bikesP.addEventListener("click", (a)=> {
     }
 })
 
+
+// main view switchers 
+Array.from(viewSwitchers).forEach(s => {
+    s.addEventListener("click", ()=>{
+        document.querySelector(".vw-st.ive").classList.remove("ive");
+        switchMainView(s.dataset.view);
+        s.classList.add("ive")
+    })
+});
+
+
+// switch main views 
+const switchMainView = (v) => {
+    // with ing is hidden 
+    Array.from(document.querySelectorAll(".view-mz:not(.ing)")).forEach(a=>a.classList.add("ing"));
+    document.getElementById(v).classList.remove("ing");
+}
 
 
 // larger display start 
@@ -49,9 +68,29 @@ const switchView = (q) => {
 }
 
 
+// options pick 
+smE.addEventListener("click", (t)=>{
+    if(t.target.nodeName === "SPAN" || t.target.parentElement.nodeName === "SPAN") {
+        let tPe = t.target.closest(".ppE");
+        let all = tPe.querySelectorAll("span");
+        all.forEach(a=>a.classList.remove("ing"));
+        if(t.target.nodeName === "SPAN") {
+            t.target.classList.add("ing")
+        }
+        else if(t.target.parentElement.nodeName === "SPAN") t.target.parentElement.classList.add("ing");
+    }
+})
 
 // hide larger display 
 bVwE.addEventListener("click", closeDisplay);
 
 //on rent btn click
 rentE.addEventListener("click", switchView);
+
+
+//additional information button && more
+Array.from(document.querySelectorAll(".dp-b-t")).forEach(w=>{
+    w.addEventListener("click", ()=>{
+        w.nextElementSibling.classList.toggle("a-c")
+    })
+})

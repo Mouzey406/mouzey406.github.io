@@ -261,6 +261,7 @@ ul {
 .de-ta-il {
     grid-area: detail;
     height: calc(100vh / 2 - 50px);
+    min-height: 500px;
 }
 .de-ta-il > div:nth-child(1) {
     width: 30%;
@@ -485,6 +486,104 @@ select {
     margin-bottom: 10px;
     color: var(--color-2);
 }
+
+/* view-2 */
+.b-r-ion > div {
+flex-wrap: wrap;
+gap: 22px 0;
+}
+.b-r-ion .flex > div {
+    min-width: 120px;
+}
+.b-r-ion h5 {
+    color: var(--color-2);
+    font-size: 11px;
+}
+.b-r-ion span {
+    margin-top: 3px;
+    font-size: 15px;
+    color: var(--color);
+}
+.b-t-a-a {
+    border-color: #666565;
+    margin: 0 30px;
+}
+.l_o-n{
+    position: relative;
+    padding-left: 12px;
+    padding-bottom: 30px;
+    color: #777777;
+    font-size: 25px;
+}
+.l_o-n h6 {
+    font-weight: 200;
+}
+.l_o-n::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 0;
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: #5d5c5c;
+    border-radius: 50%;
+}
+.l_o-n::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 2.75px;
+    height: 100%;
+    display: block;
+    background-color: #777777;
+    width: 0.5px;
+}
+.l_o-n.on {
+    color: var(--color);
+}
+.l_o-n.on::before, .l_o-n.on::after {
+    background-color: var(--color);
+}
+.a-f_l {
+    padding-bottom: 0px;
+}
+.a-f_l::before {
+    bottom: 0px;
+    top: auto;
+}
+.a-f_l::after {
+    transform: translateY(-10px);
+}
+.dp-b-t {
+    padding: 12px 30px 20px 30px;
+    position: relative;
+}
+.bk{
+    overflow: visible;
+}
+.b-q-ion{
+    position: absolute;
+    box-sizing: border-box;
+    top: 100%;
+    left: 0;
+    height: auto;
+    width: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    will-change: max-height;
+    transition: max-height 0.4s ease;
+    background-color: var(--bg-2);
+    z-index: 1;
+}
+.b-q-ion.a-c {
+    max-height: 300px;
+}
+
+
+
+
+
 @keyframes s-l {
     0% {
         transform: translateX(100%);
@@ -494,5 +593,12 @@ select {
     }
     100% {
         transform: translateX(0);
+    }
+}
+
+@media(max-height: 900px) {
+    div.sm-view {
+        position: fixed;
+        right: 20px;
     }
 }
