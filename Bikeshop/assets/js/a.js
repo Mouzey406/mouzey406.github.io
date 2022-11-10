@@ -5,16 +5,17 @@ let dispE = document.getElementById("dy")
 let viewE = document.getElementById("vw-1"), viewSwitchers = document.getElementsByClassName("vw-st");
 let bVwE = document.getElementById("b-vw-1");
 let rentE = document.getElementById("re-nt"), smE = document.querySelector(".sm-view");
+let done = document.getElementById("done"), form = document.querySelector("form");
 
-// bike cards events 
-bikesP.addEventListener("click", (a)=> {
-    if(a.target.classList.contains("bk") || a.target.matches(".bk *")) {
-        let aP = a.target.classList.contains("bk") ? a.target : a.target.closest(".bk") ? a.target.closest(".bk") : null;
-        if(aP === null) return;
-        let bId = aP.dataset.bid;
-        openDisplay(bId);
-    }
-})
+// // bike cards events 
+// bikesP.addEventListener("click", (a)=> {
+//     if(a.target.classList.contains("bk") || a.target.matches(".bk *")) {
+//         let aP = a.target.classList.contains("bk") ? a.target : a.target.closest(".bk") ? a.target.closest(".bk") : null;
+//         if(aP === null) return;
+//         let bId = aP.dataset.bid;
+//         openDisplay(bId);
+//     }
+// })
 
 
 // main view switchers 
@@ -70,14 +71,11 @@ const switchView = (q) => {
 
 // options pick 
 smE.addEventListener("click", (t)=>{
-    if(t.target.nodeName === "SPAN" || t.target.parentElement.nodeName === "SPAN") {
-        let tPe = t.target.closest(".ppE");
-        let all = tPe.querySelectorAll("span");
+    if(t.target.classList.contains("c-pick")) {
+        let all = document.querySelectorAll(".c-pick");
         all.forEach(a=>a.classList.remove("ing"));
-        if(t.target.nodeName === "SPAN") {
             t.target.classList.add("ing")
-        }
-        else if(t.target.parentElement.nodeName === "SPAN") t.target.parentElement.classList.add("ing");
+            _s("color").value = t.target.title;
     }
 })
 
