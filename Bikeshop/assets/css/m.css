@@ -127,11 +127,14 @@ ul {
 .main {
     background-color: rgb(20, 20, 20);
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
     flex: 1;
+    height: inherit;
 }
 .view-mz {
+    height: 100%;
     z-index: 2;
+    overflow-y: auto;
     transition: 0.3s ease-out;
 }
 /* animation  */
@@ -173,6 +176,9 @@ ul {
     gap: 20px;
     align-items: center;
 }
+#s-t-btn {
+    color: #777777;
+}
 .s-d-type {
     position: relative;
     display: inline-block;
@@ -203,7 +209,7 @@ ul {
     background-color: #ead2b7;
     top: 37px;
     left: 80px;
-    z-index: 1;
+    z-index: 2;
 }
 .s-drop.ing {
     display: block;
@@ -355,7 +361,6 @@ position: relative;
     grid-template-areas: 
     "detail"
     "more-detail";
-    overflow-y: auto;
     max-height: 95vh;
     padding: 80px 20px;
     max-width: 1100px;

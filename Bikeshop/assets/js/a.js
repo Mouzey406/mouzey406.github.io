@@ -6,7 +6,7 @@ let viewE = document.getElementById("vw-1"), viewSwitchers = document.getElement
 let bVwE = document.getElementById("b-vw-1");
 let rentE = document.getElementById("re-nt"), smE = document.querySelector(".sm-view");
 let done = document.getElementById("done"), form = document.querySelector("form");
-let tDrop = document.querySelector(".s-drop"), sDType = document.querySelector(".s-d-type");
+let tDrop = document.querySelector(".s-drop"), sDType = document.querySelector(".s-d-type"), ss = _s("ss");
 // // bike cards events 
 // bikesP.addEventListener("click", (a)=> {
 //     if(a.target.classList.contains("bk") || a.target.matches(".bk *")) {
@@ -109,13 +109,41 @@ else if(e.target.nodeName === "BUTTON") {
 
 function filterS(c) {
     if(c.toLowerCase() === "favorited") {
+        Array.from(document.querySelectorAll("#vw-1 .bk")).forEach(j=> j.style.display = "block")
         let d = document.querySelectorAll("i.bi-heart");
         d.forEach(e=> {
             let f = e.closest(".bk");
             f.style.display = "none";
         })
     }
+    else if(c.toLowerCase() === "available") {
+        Array.from(document.querySelectorAll("#vw-1 .bk")).forEach(j=> j.style.display = "block")
+        Array.from(document.querySelectorAll("#vw-1 .bk.tkn")).forEach(j=> j.style.display = "none")
+    }
     else {
         Array.from(document.querySelectorAll("#vw-1 .bk")).forEach(j=> j.style.display = "block")
     }
 } 
+
+let tT;
+ss.addEventListener("input", ()=>{
+    clearTimeout(tT)
+    if(ss.value.length > 0) {
+        tT = setTimeout(() => {
+        Array.from(document.querySelectorAll("#vw-1 .bk")).forEach(j=> j.style.display = "none")
+        let v = ss.value.toLowerCase();
+        bikes.filter(y => {
+           return y.title.toLowerCase().indexOf(v) > -1 || y.type.toLowerCase().indexOf(v) > -1
+        }).forEach(z => {
+            console.log(z);
+            try {
+                document.querySelector(`#vw-1 .bk[data-id="${z._id}"]`).style.display = "block";
+            }
+            catch(e) {
+                console.log(e);
+            }
+        })
+        _s("s-ler").classList.remove("spin");
+    }, 500);
+    }
+})
