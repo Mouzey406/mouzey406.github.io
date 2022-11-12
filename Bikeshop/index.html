@@ -55,6 +55,14 @@
                                         <label for="ss"></label>
                                         <input type="search" name="" id="ss" placeholder="Search for bikes">
                                     </div>
+                                    <div class="s-type">
+                                        <span id="s-t-btn">Showing</span>
+                                        <span class="s-d-type">All</span>
+                                        <div class="s-drop">
+                                            <button type="button" class="ing" id="al-s">All</button>
+                                            <button type="button" id="al-f">Favorited</button>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="str-c">
                                     <div class="bikes py-md">
@@ -69,7 +77,7 @@
                 </div>
                 <div class="view-mz pos-a h-100 ing" id="vw-2">
                     <div class="p-md">
-                        <div class="flex b-c-r py-md bk-s" id="vw-2-bk">
+                        <div class="flex b-c-r py-md bk-s bk-s-s" id="vw-2-bk">
                             
                             </div>
                         </div>
@@ -167,8 +175,8 @@
                                 </div>
                                 <div class="cl-c">
                                     <h6>Select a color</h6>
+                                    <input type="hidden" id="color">
                                     <div class="flex a-i-c cr-div py-sm ppE" id="ppE">
-                                        <input type="hidden" id="color">
                                     </div>
                                 </div>
                                 <div class="ch-ut">
@@ -224,11 +232,11 @@
     <div class="pop-up" id="pp">
         <div class="p-gr">
             <div class="pp-b">
-                <img src="./assets/images/bk/a (6).png" alt="">
+                <img id="pp-img" src="./assets/images/bk/a (6).png" alt="">
             </div>
             <div class="p-c-txt flex a-i-c">
                 <div>
-                    <h2>Yay, you just rented a bike, let's goo ⚡</h2>
+                    <h2 id="pp-h2"></h2>
                 </div>
             </div>
         </div>

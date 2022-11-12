@@ -6,7 +6,7 @@ let viewE = document.getElementById("vw-1"), viewSwitchers = document.getElement
 let bVwE = document.getElementById("b-vw-1");
 let rentE = document.getElementById("re-nt"), smE = document.querySelector(".sm-view");
 let done = document.getElementById("done"), form = document.querySelector("form");
-
+let tDrop = document.querySelector(".s-drop"), sDType = document.querySelector(".s-d-type");
 // // bike cards events 
 // bikesP.addEventListener("click", (a)=> {
 //     if(a.target.classList.contains("bk") || a.target.matches(".bk *")) {
@@ -92,3 +92,30 @@ Array.from(document.querySelectorAll(".dp-b-t")).forEach(w=>{
         w.nextElementSibling.classList.toggle("a-c")
     })
 })
+
+document.querySelector(".s-type").addEventListener("click", (e)=> {
+if(e.target.matches(".s-d-type ")) {
+    tDrop.classList.toggle("ing");
+}
+else if(e.target.nodeName === "BUTTON") {
+    sDType.textContent = e.target.textContent;
+    tDrop.classList.toggle("ing");
+    document.querySelector(".s-drop .ing").classList.toggle("ing");
+    e.target.classList.toggle("ing");
+    filterS(e.target.textContent)
+}
+// else if(e.target.classList.contains(""))
+})
+
+function filterS(c) {
+    if(c.toLowerCase() === "favorited") {
+        let d = document.querySelectorAll("i.bi-heart");
+        d.forEach(e=> {
+            let f = e.closest(".bk");
+            f.style.display = "none";
+        })
+    }
+    else {
+        Array.from(document.querySelectorAll("#vw-1 .bk")).forEach(j=> j.style.display = "block")
+    }
+} 
