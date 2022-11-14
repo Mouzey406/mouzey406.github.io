@@ -100,7 +100,7 @@ if(e.target.matches(".s-d-type ")) {
 else if(e.target.nodeName === "BUTTON") {
     sDType.textContent = e.target.textContent;
     tDrop.classList.toggle("ing");
-    document.querySelector(".s-drop .ing").classList.toggle("ing");
+    if(document.querySelector(".s-drop .ing")) document.querySelector(".s-drop .ing").classList.toggle("ing");
     e.target.classList.toggle("ing");
     filterS(e.target.textContent)
 }
@@ -108,6 +108,7 @@ else if(e.target.nodeName === "BUTTON") {
 })
 
 function filterS(c) {
+    if(ss.value.length > 0) ss.value = "";
     if(c.toLowerCase() === "favorited") {
         Array.from(document.querySelectorAll("#vw-1 .bk")).forEach(j=> j.style.display = "block")
         let d = document.querySelectorAll("i.bi-heart");
@@ -128,7 +129,9 @@ function filterS(c) {
 let tT;
 ss.addEventListener("input", ()=>{
     clearTimeout(tT)
-    if(ss.value.length > 0) {
+    if(ss.value.length > 0 && ss.value.length < 12) {
+        sDType.textContent = "matching: " + ss.value;
+        if(document.querySelector(".s-drop .ing") !== null) document.querySelector(".s-drop .ing").classList.remove("ing");
         tT = setTimeout(() => {
         Array.from(document.querySelectorAll("#vw-1 .bk")).forEach(j=> j.style.display = "none")
         let v = ss.value.toLowerCase();
@@ -145,5 +148,10 @@ ss.addEventListener("input", ()=>{
         })
         _s("s-ler").classList.remove("spin");
     }, 500);
+    }
+    else {
+        sDType.textContent = "All";
+        _s("al-s").classList.add("ing");
+        Array.from(document.querySelectorAll("#vw-1 .bk")).forEach(j=> j.style.display = "block")
     }
 })

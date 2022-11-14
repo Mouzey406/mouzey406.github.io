@@ -272,7 +272,6 @@ class App {
     let ls = JSON.parse(localStorage.getItem("bikes"));
     if (!ls) {
       this._setBikes();
-      return;
     }
     this.borrowed = ls[0].myBikes[0].borrowed;
     this.liked = ls[0].liked;
@@ -516,10 +515,23 @@ class Rent extends App {
       _s("vw-2-bk").insertAdjacentHTML("beforeEnd", c)
     }
   }
+  
+  const BikePlace = new App(bikes);
+class Return {
+  constructor(bikeId) {
+    this.bikeId = bikeId;
+  }
 
-class Return {}
+  ret() {
+    return new Promise((res, rej)=>{
+      if(bikes.find(a=>a._id===Number(this.bikeId)) !== undefined && BikePlace.borrowed.find(a=>a._id===Number(this.bikeId))) {
+        res(true);
+      }
+      else rej(false);
+    });
+  }
+}
 
-const BikePlace = new App(bikes);
 BikePlace._getBikesData();
 BikePlace.getBorrowed().forEach(a=> {let b =new Rent(a._id)});
 bikesP.addEventListener("click", BikePlace._bikesClick.bind(this, BikePlace), false);

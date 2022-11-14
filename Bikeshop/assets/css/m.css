@@ -792,3 +792,6 @@ gap: 22px 0;
         right: 20px;
     }
 }
+.btm-nav {
+    opacity: 0.4;
+}
