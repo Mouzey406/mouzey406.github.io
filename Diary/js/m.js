@@ -37,7 +37,7 @@ function ap(dt, t, cl, am, location){
     cc++;
     if(t==="diary") {
         let iMg = "", noImgClass = "has-i-m-g";
-        dt.image.length > 0 ? iMg = 'background-image: url(./images/'+dt.image.split("/")[2]+')' : (iMg = 'background-color:var(--bg3)', noImgClass = "no-i-m-g")
+        dt.image.length > 0 ? iMg = 'background-image: url(https://mouzey406.github.io/Diary/images/'+dt.image.split("/")[2]+')' : (iMg = 'background-color:var(--bg3)', noImgClass = "no-i-m-g")
         let d = document.createElement("div");
         d.innerHTML = `
           <div class="i-c-bg p-sm p-r" data-cc="${cc}" style="${iMg}"><h4>${dt.title}</h4><p>${dt.text}</p><span class="n-d-t">${daT(dt.date, false)}</span><div class="c-d-ls p-sm"><div class="flex j-c-b"><div>${dt.status === "active" ? `<span class="i-c-o-n-2 e-d-i-t"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pencil-fill e-d-i-t" viewBox="0 0 16 16">
