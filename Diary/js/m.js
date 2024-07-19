@@ -196,7 +196,7 @@ function hdp(to, a) {
     n.forEach(m=>m.value = to[m.title.toLowerCase()])
     let q;
     if(to.image.length < 1) {_e(".c--main.a-ctiv-e").style.backgroundImage=`none`; _e(".c--main.a-ctiv-e").classList.remove("has-img"); q = _e(".i-n-n")} 
-   else { _e(".c--main.a-ctiv-e").style.backgroundImage=`url(${to.image})`; _e(".c--main.a-ctiv-e").classList.add("has-img"); q =  _e(`[data-rep='${spt(to.image, 9, 12)}']`).closest(".i-m-g-d-p"); }
+   else { _e(".c--main.a-ctiv-e").style.backgroundImage=`url(https://mouzey406.github.io/Diary/images/${to.image.split("/")[2]})`; _e(".c--main.a-ctiv-e").classList.add("has-img"); q =  _e(`[data-rep='${spt(to.image, 9, 12)}']`).closest(".i-m-g-d-p"); }
     aCtivE(q, "add", [".i-m-g-d-p.a-ctiv-e"]);
     refresh("form#d-iar-y", a, "diary");
     if(iPh()) fdTmt = setTimeout(()=>{_e(".z-tt").classList.add("fd-Dwn")},3000);
